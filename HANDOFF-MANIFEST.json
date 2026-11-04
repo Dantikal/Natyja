@@ -1,7 +1,7 @@
 {
   "preparedAt": "2026-11-04T08:24:49.051Z",
   "destination": "Dantikal/Natyja",
-  "uploadStatus": "NOT_UPLOADED_NO_WRITE_PERMISSION",
+  "uploadStatus": "UPLOADED_TO_UPDATED_SITE",
   "files": [
     {
       "path": ".gitignore",
@@ -855,8 +855,9 @@
     },
     {
       "path": "UPLOAD-STATUS.md",
-      "bytes": 10849,
-      "sha256": "d066fe2084a8e0bafa6d41ba3835f7b205f68af55b301633032beb1edfabe8b9"
+      "bytes": 7818,
+      "sha256": "12f63c64237fcba48a484924c5bf7a3888028db45b3c81644175c4945d9685e6"
     }
-  ]
+  ],
+  "branch": "updated-site"
 }

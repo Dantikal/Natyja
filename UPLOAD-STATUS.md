@@ -1,207 +1,190 @@
-# Что подготовлено для GitHub
+# Что загружено на GitHub
 
 Дата: 4 ноября 2026 года.
 
-**Статус: на GitHub ничего не загружено.**
+**Статус: исходники отправлены в ветку updated-site через локальный Git.**
 
 Репозиторий: https://github.com/Dantikal/Natyja
-Подключённый аккаунт: nurbekchapkynchiev996-crypto.
-Повторная проверка GitHub: чтение разрешено, запись запрещена (push: false). Поэтому новый файл, коммит и обновления в репозитории не создавались.
+Ветка с обновлением: https://github.com/Dantikal/Natyja/tree/updated-site
+Первый коммит обновления: e925bd5. Основная ветка main не изменена.
 
-## Что находится в архиве
+В обновлении: frontend, backend, код анализа идей и отчётов, помощник ИИ, OCR, тесты, структура пустой БД, шаблон настроек и инструкция DEPLOY.md. Модели Ollama устанавливаются отдельно.
 
-- frontend/src и frontend/public — интерфейс сайта и изображения.
-- backend/src — сервер, API, авторизация и обработка файлов.
-- backend/public-site.cjs — шлюз production-сайта.
-- backend/package.json и package-lock.json, frontend/package.json и package-lock.json — зависимости.
-- backend/.env.example — только шаблон настроек, без действующих секретов.
-- database/schema.sql — структура 14 таблиц, без записей пользователей и отчётов.
-- backend/scripts/create-admin.cjs — создание нового администратора на сервере.
-- backend/ocr-data — языковые файлы распознавания текста.
-- Тесты, README.md, DEPLOY.md и отчёты проверки.
-- HANDOFF-MANIFEST.json — полный список файлов с размерами и SHA-256.
+Действующие секреты, пользовательские фотографии, документы и данные БД не добавлялись этим обновлением. Старые файлы в корне и предыдущая история репозитория сохранены: ранее опубликованные .env и uploads должен отдельно обработать владелец. Добавление .gitignore их не удаляет.
 
-## Чего в архиве нет
-
-Действующего .env, паролей, ключей, записей базы данных, фотографий пользователей, их документов и истории ИИ. Также исключены node_modules, логи, программы Windows, резервные копии и готовая сборка frontend: на сервере её создают командой npm run build.
-
-## Чтобы загрузка стала возможна
-
-Владелец Dantikal должен предоставить аккаунту nurbekchapkynchiev996-crypto права Write. После этого можно загрузить подготовленные изменения и показать ссылку на созданный коммит.
-
-В публичной версии репозитория ранее обнаружены .env и uploads. Владельцу нужно закрыть репозиторий, сменить раскрытые секреты и очистить историю чувствительных файлов. Подготовленный архив их не содержит.
+Получателю нужно проверять и развёртывать папки backend и frontend по инструкции DEPLOY.md. Сам факт загрузки в GitHub не запускает новый сервер.
 
 ## Полный перечень подготовленных файлов
 
-- .gitignore (260 Б)
-- backend/.env.example (362 Б)
-- backend/assistant-support.test.cjs (8222 Б)
-- backend/assistant.test.cjs (4450 Б)
-- backend/BOT-PROTECTION.md (3033 Б)
-- backend/local-knowledge.test.cjs (2918 Б)
-- backend/ocr-data/eng.traineddata (4113088 Б)
-- backend/ocr-data/LICENSE (11358 Б)
-- backend/ocr-data/README.md (423 Б)
-- backend/ocr-data/rus.traineddata (3861738 Б)
-- backend/package-lock.json (87367 Б)
-- backend/package.json (610 Б)
-- backend/photo-support.test.cjs (1072 Б)
-- backend/public-site.cjs (2179 Б)
-- backend/rating.test.cjs (1445 Б)
-- backend/report-assessment.test.cjs (2210 Б)
-- backend/report-worker.test.cjs (1097 Б)
-- backend/scripts/create-admin.cjs (1131 Б)
-- backend/security.test.cjs (1365 Б)
-- backend/src/config/db.js (391 Б)
-- backend/src/config/migrate.js (8214 Б)
-- backend/src/middleware/auth.js (1820 Б)
-- backend/src/middleware/botProtection.js (2973 Б)
-- backend/src/middleware/securityHeaders.js (396 Б)
-- backend/src/middleware/taskAttachment.js (1030 Б)
-- backend/src/middleware/upload.js (1943 Б)
-- backend/src/middleware/uploadPhoto.js (1585 Б)
-- backend/src/routes/assistant.js (4754 Б)
-- backend/src/routes/assistantSupport.js (10133 Б)
-- backend/src/routes/auth.js (6157 Б)
-- backend/src/routes/dictionaries.js (5560 Б)
-- backend/src/routes/ideas.js (5111 Б)
-- backend/src/routes/public.js (1031 Б)
-- backend/src/routes/rating.js (1069 Б)
-- backend/src/routes/reportAssessments.js (3423 Б)
-- backend/src/routes/reports.js (1815 Б)
-- backend/src/routes/soldiers.js (10587 Б)
-- backend/src/routes/taskReview.js (4895 Б)
-- backend/src/routes/tasks.js (19586 Б)
-- backend/src/routes/userDetails.js (7292 Б)
-- backend/src/routes/users.js (6209 Б)
-- backend/src/server.js (2895 Б)
-- backend/src/services/assistant.js (10409 Б)
-- backend/src/services/documentText.cjs (2199 Б)
-- backend/src/services/ideaReview.js (4835 Б)
-- backend/src/services/localKnowledge.js (4198 Б)
-- backend/src/services/rating.js (2828 Б)
-- backend/src/services/reportAssessment.js (9376 Б)
-- backend/src/services/supportAssistant.js (6483 Б)
-- backend/src/services/supportStore.js (1747 Б)
-- backend/src/utils/authSession.js (552 Б)
-- backend/src/utils/registrationFields.js (1149 Б)
-- backend/src/utils/userActivity.js (287 Б)
-- backend/verify-bot-protection.cjs (4004 Б)
-- database/schema.sql (12185 Б)
-- DEPLOY.md (7387 Б)
-- frontend/package-lock.json (748573 Б)
-- frontend/package.json (1636 Б)
-- frontend/public/border-guard.svg (2962 Б)
-- frontend/public/favicon.ico (3870 Б)
-- frontend/public/index.html (1763 Б)
-- frontend/public/logo192.png (5347 Б)
-- frontend/public/logo512.png (9664 Б)
-- frontend/public/manifest.json (341 Б)
-- frontend/public/natyyzha-1-logo.png (1760756 Б)
-- frontend/public/natyyzha-1-logo.webp (853694 Б)
-- frontend/public/natyyzha-emblem.png (1231942 Б)
-- frontend/public/natyyzha-emblem.webp (823212 Б)
-- frontend/public/robots.txt (67 Б)
-- frontend/src/admin.css (6485 Б)
-- frontend/src/api/axios.js (1106 Б)
-- frontend/src/App.css (43142 Б)
-- frontend/src/App.js (3848 Б)
-- frontend/src/appearance.css (7524 Б)
-- frontend/src/assets/border-guard.svg (2962 Б)
-- frontend/src/assets/border-service-emblem.png (112018 Б)
-- frontend/src/assets/border-service-emblem.webp (50736 Б)
-- frontend/src/assets/border-watermark.svg (2955 Б)
-- frontend/src/assets/natyyzha-emblem.png (1231942 Б)
-- frontend/src/assets/natyyzha-emblem.webp (823212 Б)
-- frontend/src/brand.css (5296 Б)
-- frontend/src/components/AssistantContext.js (11768 Б)
-- frontend/src/components/AssistantContext.test.js (1801 Б)
-- frontend/src/components/AssistantMessage.js (2041 Б)
-- frontend/src/components/AssistantMessage.test.js (863 Б)
-- frontend/src/components/AssistantVoice.js (6564 Б)
-- frontend/src/components/AssistantVoice.test.js (2112 Б)
-- frontend/src/components/Brand.js (1012 Б)
-- frontend/src/components/Captcha.css (677 Б)
-- frontend/src/components/Captcha.js (2207 Б)
-- frontend/src/components/Captcha.test.js (2418 Б)
-- frontend/src/components/DeferredEditors.js (552 Б)
-- frontend/src/components/ExcelEditor.js (19726 Б)
-- frontend/src/components/FileUpload.js (2501 Б)
-- frontend/src/components/HelpButton.js (2521 Б)
-- frontend/src/components/HelpGuide.css (3320 Б)
-- frontend/src/components/HelpGuide.js (2727 Б)
-- frontend/src/components/HelpGuide.test.js (3502 Б)
-- frontend/src/components/Navbar.js (5642 Б)
-- frontend/src/components/Navbar.test.js (1342 Б)
-- frontend/src/components/PointsSummary.css (1141 Б)
-- frontend/src/components/PointsSummary.js (1971 Б)
-- frontend/src/components/PointsSummary.test.js (852 Б)
-- frontend/src/components/ProfileOverview.js (2938 Б)
-- frontend/src/components/ProtectedRoute.js (685 Б)
-- frontend/src/components/RatingList.js (1759 Б)
-- frontend/src/components/RatingList.test.js (1439 Б)
-- frontend/src/components/ReportAiAssessment.css (1425 Б)
-- frontend/src/components/ReportAiAssessment.js (5328 Б)
-- frontend/src/components/ReportAiAssessment.test.js (2153 Б)
-- frontend/src/components/ReportEditorModal.js (5351 Б)
-- frontend/src/components/ReportEditorModal.test.js (2431 Б)
-- frontend/src/components/ReportTable.js (5066 Б)
-- frontend/src/components/SoldierForm.js (10018 Б)
-- frontend/src/components/TaskAttachment.js (494 Б)
-- frontend/src/components/TaskDeadlineReminders.css (621 Б)
-- frontend/src/components/TaskDeadlineReminders.js (2858 Б)
-- frontend/src/components/TaskDeadlineReminders.test.js (1531 Б)
-- frontend/src/components/UserDetailsModal.js (14082 Б)
-- frontend/src/components/UserDetailsModal.test.js (2368 Б)
-- frontend/src/components/WordEditor.js (9338 Б)
-- frontend/src/context/AppearanceContext.js (2059 Б)
-- frontend/src/context/AppearanceContext.test.js (1345 Б)
-- frontend/src/context/AuthContext.js (1966 Б)
-- frontend/src/context/LanguageContext.js (1037 Б)
-- frontend/src/context/LanguageContext.test.js (906 Б)
-- frontend/src/context/TaskNotifications.js (3347 Б)
-- frontend/src/context/TaskNotifications.test.js (2714 Б)
-- frontend/src/experience.css (15853 Б)
-- frontend/src/help/topics.js (17720 Б)
-- frontend/src/i18n/phrases.js (37492 Б)
-- frontend/src/i18n/translations.js (29204 Б)
-- frontend/src/index.css (265 Б)
-- frontend/src/index.js (253 Б)
-- frontend/src/office.css (7892 Б)
-- frontend/src/pages/AdminPanel.js (5392 Б)
-- frontend/src/pages/Assistant.css (27564 Б)
-- frontend/src/pages/Assistant.js (30409 Б)
-- frontend/src/pages/Assistant.test.js (8857 Б)
-- frontend/src/pages/ChangePassword.js (2612 Б)
-- frontend/src/pages/Dashboard.js (6005 Б)
-- frontend/src/pages/Dashboard.test.js (1568 Б)
-- frontend/src/pages/Help.js (972 Б)
-- frontend/src/pages/Ideas.css (3798 Б)
-- frontend/src/pages/Ideas.js (11821 Б)
-- frontend/src/pages/Ideas.test.js (2694 Б)
-- frontend/src/pages/Login.js (2453 Б)
-- frontend/src/pages/Login.test.js (1715 Б)
-- frontend/src/pages/MyTasks.js (9925 Б)
-- frontend/src/pages/Profile.js (4277 Б)
-- frontend/src/pages/Register.js (8563 Б)
-- frontend/src/pages/Register.test.js (2933 Б)
-- frontend/src/pages/ReportsArchive.js (3986 Б)
-- frontend/src/pages/Settings.js (3060 Б)
-- frontend/src/pages/SoldierCard.js (4670 Б)
-- frontend/src/pages/TaskManagement.js (18492 Б)
-- frontend/src/pages/TasksAdmin.js (22665 Б)
-- frontend/src/pages/TasksAdmin.test.js (1585 Б)
-- frontend/src/pages/UnitSummary.js (5914 Б)
-- frontend/src/product.css (14005 Б)
-- frontend/src/utils/assistantHistory.js (749 Б)
-- frontend/src/utils/assistantHistory.test.js (966 Б)
-- frontend/src/utils/documents.js (4397 Б)
-- frontend/src/utils/documents.test.js (1286 Б)
-- frontend/src/utils/ratingPeriods.js (715 Б)
-- frontend/src/utils/taskDeadlines.js (1331 Б)
-- frontend/src/utils/taskDeadlines.test.js (1068 Б)
-- PERFORMANCE-REVIEW.md (4050 Б)
-- README.md (854 Б)
-- SECURITY-REVIEW.md (7002 Б)
-
-Этот файл также добавлен в обновлённый архив.
+- .gitignore
+- backend/.env.example
+- backend/assistant-support.test.cjs
+- backend/assistant.test.cjs
+- backend/BOT-PROTECTION.md
+- backend/local-knowledge.test.cjs
+- backend/ocr-data/eng.traineddata
+- backend/ocr-data/LICENSE
+- backend/ocr-data/README.md
+- backend/ocr-data/rus.traineddata
+- backend/package-lock.json
+- backend/package.json
+- backend/photo-support.test.cjs
+- backend/public-site.cjs
+- backend/rating.test.cjs
+- backend/report-assessment.test.cjs
+- backend/report-worker.test.cjs
+- backend/scripts/create-admin.cjs
+- backend/security.test.cjs
+- backend/src/config/db.js
+- backend/src/config/migrate.js
+- backend/src/middleware/auth.js
+- backend/src/middleware/botProtection.js
+- backend/src/middleware/securityHeaders.js
+- backend/src/middleware/taskAttachment.js
+- backend/src/middleware/upload.js
+- backend/src/middleware/uploadPhoto.js
+- backend/src/routes/assistant.js
+- backend/src/routes/assistantSupport.js
+- backend/src/routes/auth.js
+- backend/src/routes/dictionaries.js
+- backend/src/routes/ideas.js
+- backend/src/routes/public.js
+- backend/src/routes/rating.js
+- backend/src/routes/reportAssessments.js
+- backend/src/routes/reports.js
+- backend/src/routes/soldiers.js
+- backend/src/routes/taskReview.js
+- backend/src/routes/tasks.js
+- backend/src/routes/userDetails.js
+- backend/src/routes/users.js
+- backend/src/server.js
+- backend/src/services/assistant.js
+- backend/src/services/documentText.cjs
+- backend/src/services/ideaReview.js
+- backend/src/services/localKnowledge.js
+- backend/src/services/rating.js
+- backend/src/services/reportAssessment.js
+- backend/src/services/supportAssistant.js
+- backend/src/services/supportStore.js
+- backend/src/utils/authSession.js
+- backend/src/utils/registrationFields.js
+- backend/src/utils/userActivity.js
+- backend/verify-bot-protection.cjs
+- database/schema.sql
+- DEPLOY.md
+- frontend/package-lock.json
+- frontend/package.json
+- frontend/public/border-guard.svg
+- frontend/public/favicon.ico
+- frontend/public/index.html
+- frontend/public/logo192.png
+- frontend/public/logo512.png
+- frontend/public/manifest.json
+- frontend/public/natyyzha-1-logo.png
+- frontend/public/natyyzha-1-logo.webp
+- frontend/public/natyyzha-emblem.png
+- frontend/public/natyyzha-emblem.webp
+- frontend/public/robots.txt
+- frontend/src/admin.css
+- frontend/src/api/axios.js
+- frontend/src/App.css
+- frontend/src/App.js
+- frontend/src/appearance.css
+- frontend/src/assets/border-guard.svg
+- frontend/src/assets/border-service-emblem.png
+- frontend/src/assets/border-service-emblem.webp
+- frontend/src/assets/border-watermark.svg
+- frontend/src/assets/natyyzha-emblem.png
+- frontend/src/assets/natyyzha-emblem.webp
+- frontend/src/brand.css
+- frontend/src/components/AssistantContext.js
+- frontend/src/components/AssistantContext.test.js
+- frontend/src/components/AssistantMessage.js
+- frontend/src/components/AssistantMessage.test.js
+- frontend/src/components/AssistantVoice.js
+- frontend/src/components/AssistantVoice.test.js
+- frontend/src/components/Brand.js
+- frontend/src/components/Captcha.css
+- frontend/src/components/Captcha.js
+- frontend/src/components/Captcha.test.js
+- frontend/src/components/DeferredEditors.js
+- frontend/src/components/ExcelEditor.js
+- frontend/src/components/FileUpload.js
+- frontend/src/components/HelpButton.js
+- frontend/src/components/HelpGuide.css
+- frontend/src/components/HelpGuide.js
+- frontend/src/components/HelpGuide.test.js
+- frontend/src/components/Navbar.js
+- frontend/src/components/Navbar.test.js
+- frontend/src/components/PointsSummary.css
+- frontend/src/components/PointsSummary.js
+- frontend/src/components/PointsSummary.test.js
+- frontend/src/components/ProfileOverview.js
+- frontend/src/components/ProtectedRoute.js
+- frontend/src/components/RatingList.js
+- frontend/src/components/RatingList.test.js
+- frontend/src/components/ReportAiAssessment.css
+- frontend/src/components/ReportAiAssessment.js
+- frontend/src/components/ReportAiAssessment.test.js
+- frontend/src/components/ReportEditorModal.js
+- frontend/src/components/ReportEditorModal.test.js
+- frontend/src/components/ReportTable.js
+- frontend/src/components/SoldierForm.js
+- frontend/src/components/TaskAttachment.js
+- frontend/src/components/TaskDeadlineReminders.css
+- frontend/src/components/TaskDeadlineReminders.js
+- frontend/src/components/TaskDeadlineReminders.test.js
+- frontend/src/components/UserDetailsModal.js
+- frontend/src/components/UserDetailsModal.test.js
+- frontend/src/components/WordEditor.js
+- frontend/src/context/AppearanceContext.js
+- frontend/src/context/AppearanceContext.test.js
+- frontend/src/context/AuthContext.js
+- frontend/src/context/LanguageContext.js
+- frontend/src/context/LanguageContext.test.js
+- frontend/src/context/TaskNotifications.js
+- frontend/src/context/TaskNotifications.test.js
+- frontend/src/experience.css
+- frontend/src/help/topics.js
+- frontend/src/i18n/phrases.js
+- frontend/src/i18n/translations.js
+- frontend/src/index.css
+- frontend/src/index.js
+- frontend/src/office.css
+- frontend/src/pages/AdminPanel.js
+- frontend/src/pages/Assistant.css
+- frontend/src/pages/Assistant.js
+- frontend/src/pages/Assistant.test.js
+- frontend/src/pages/ChangePassword.js
+- frontend/src/pages/Dashboard.js
+- frontend/src/pages/Dashboard.test.js
+- frontend/src/pages/Help.js
+- frontend/src/pages/Ideas.css
+- frontend/src/pages/Ideas.js
+- frontend/src/pages/Ideas.test.js
+- frontend/src/pages/Login.js
+- frontend/src/pages/Login.test.js
+- frontend/src/pages/MyTasks.js
+- frontend/src/pages/Profile.js
+- frontend/src/pages/Register.js
+- frontend/src/pages/Register.test.js
+- frontend/src/pages/ReportsArchive.js
+- frontend/src/pages/Settings.js
+- frontend/src/pages/SoldierCard.js
+- frontend/src/pages/TaskManagement.js
+- frontend/src/pages/TasksAdmin.js
+- frontend/src/pages/TasksAdmin.test.js
+- frontend/src/pages/UnitSummary.js
+- frontend/src/product.css
+- frontend/src/utils/assistantHistory.js
+- frontend/src/utils/assistantHistory.test.js
+- frontend/src/utils/documents.js
+- frontend/src/utils/documents.test.js
+- frontend/src/utils/ratingPeriods.js
+- frontend/src/utils/taskDeadlines.js
+- frontend/src/utils/taskDeadlines.test.js
+- PERFORMANCE-REVIEW.md
+- README.md
+- SECURITY-REVIEW.md
+- UPLOAD-STATUS.md
+- HANDOFF-MANIFEST.json

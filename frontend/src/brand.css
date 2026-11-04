@@ -1,0 +1,81 @@
+#root { min-height: 100vh; isolation: isolate; }
+#root::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: url('./assets/natyyzha-emblem.webp') no-repeat right 5vw center / min(43vw, 540px) auto; opacity: .13; }
+.brand { display: inline-flex; align-items: center; gap: 11px; }
+.brand-emblem { display: block; flex: 0 0 auto; width: 50px; height: 50px; object-fit: contain; }
+.brand-wordmark { display: flex; flex-direction: column; gap: 5px; }
+.brand-name { font-size: 16px; font-weight: 650; letter-spacing: 1.6px; text-transform: uppercase; color: #e4ce89; }
+.brand-caption { font-size: 9px; line-height: 1.4; letter-spacing: .7px; font-weight: 400; opacity: .65; }
+.logo { display: inline-flex; align-items: center; }
+.navbar { background: #142f2b; border-bottom: 1px solid #7e8268; }
+.auth-page { position: relative; isolation: isolate; justify-content: flex-start; padding: 48px clamp(24px, 10vw, 160px); background: radial-gradient(ellipse at 80% 40%, #203e34, transparent 70%), #101f1e; }
+.auth-page::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: url('./assets/natyyzha-emblem.webp') no-repeat right 6vw center / min(43vw, 570px) auto; opacity: .53; }
+.auth-box { border-top: 0; border-radius: 10px; box-shadow: 0 24px 80px #0003; }
+.auth-brand { text-align: center; margin: 0 0 24px; padding: 14px; border: 1px solid #294a37; border-radius: 8px; background: #061d14; }
+.brand-large { display: block; width: 100%; }
+.brand-lockup { display: block; width: 100%; height: auto; max-width: 330px; margin: 0 auto; }
+.brand-large .brand-emblem { width: 60px; height: 72px; }
+.brand-large .brand-name { font-size: 21px; letter-spacing: 1.6px; }
+.brand-large .brand-caption { font-size: 10px; letter-spacing: .5px; }
+.auth-lang-switch { text-align: right; margin-bottom: 12px; }
+.auth-lang-switch button { border: 1px solid #d1d9d4; background: #f8faf9; color: #264b3e; border-radius: 5px; padding: 6px 10px; font-size: 11px; cursor: pointer; }
+.auth-box .btn-primary { width: 100%; background: var(--accent); border-color:var(--accent); color:#fff; }
+.auth-box h1 { font-size: 20px; }
+@media (max-width: 768px) {
+  #root::before { background-position: center 62vh; background-size: min(82vw, 440px) auto; opacity: .15; }
+  .auth-page { justify-content: center; padding: 24px 16px; }
+  .auth-page::before { background-position: right -70px bottom -70px; background-size: 95vw auto; opacity: .3; }
+  .brand-emblem { width: 42px; height: 42px; }
+  .brand-name { font-size: 15px; }
+  .brand-large .brand-emblem { width: 54px; height: 64px; }
+  .auth-brand { margin-bottom: 18px; }
+}
+@media print { #root::before, .auth-page::before { display: none; } }
+
+/* Branding stays secondary to the account and its actions. */
+.auth-page{display:flex;align-items:center;justify-content:center;padding:32px 18px;background:var(--canvas);min-height:100dvh;box-sizing:border-box}
+.auth-page::before{display:none}
+.auth-box{width:100%;max-width:420px;padding:30px;box-sizing:border-box;border:1px solid var(--line);background:var(--surface);box-shadow:0 12px 36px #15223808;border-radius:14px}
+.auth-box-wide{max-width:680px}
+.auth-brand{padding:0;margin:0 0 20px;border:0;background:transparent}
+.auth-brand .brand-lockup{width:190px;max-width:100%;margin:auto}
+.auth-box h1{text-align:center;font-size:23px;margin:0 0 8px;line-height:1.4}
+.auth-subtitle{text-align:center;font-size:13px;margin-bottom:26px}
+.auth-box label{font-size:13px;line-height:1.5}
+.auth-box input,.auth-box select{box-sizing:border-box;width:100%;min-height:44px;padding:11px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:var(--surface-soft);color:var(--ink)}
+.auth-box .btn-primary{min-height:44px;border-radius:8px;font-size:14px}
+.auth-lang-switch button{min-height:36px;min-width:40px;border-radius:7px}
+#root::before{opacity:.018}
+@media(max-width:640px){.auth-page{padding:20px 16px}.auth-box{padding:24px 22px}.auth-brand .brand-lockup{width:165px}.auth-box h1{font-size:22px}.auth-subtitle{margin-bottom:22px}#root::before{opacity:.018}}
+
+/* Keep both emblems in one centered row with their original proportions. */
+.brand-service-emblem { display: block; flex: 0 0 auto; width: 34px; height: 42px; object-fit: contain; }
+.brand.brand-pair { display: flex; flex-flow: row nowrap; align-items: center; justify-content: center; gap: 18px; }
+.auth-brand .brand-pair .brand-lockup { flex: 0 1 190px; min-width: 0; margin: 0; }
+.brand-pair .brand-service-emblem { width: 82px; height: 100px; }
+@media (max-width: 1100px) {
+  .navbar .brand-service-emblem { width: 28px; height: 36px; }
+}
+@media (max-width: 640px) {
+  .brand.brand-pair { gap: 14px; }
+  .auth-brand .brand-pair .brand-lockup { flex-basis: 165px; }
+  .brand-pair .brand-service-emblem { width: 66px; height: 81px; }
+}
+
+/* The service emblem sits in the page corner on entry screens. */
+.auth-page { padding-top: 268px; }
+.auth-page .brand-pair .brand-service-emblem {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: 180px;
+  height: 220px;
+}
+@media (max-width: 640px) {
+  .auth-page { padding-top: 194px; }
+  .auth-page .brand-pair .brand-service-emblem {
+    top: 16px;
+    right: 16px;
+    width: 132px;
+    height: 162px;
+  }
+}

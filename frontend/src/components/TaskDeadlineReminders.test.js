@@ -1,0 +1,22 @@
+import { render, screen, act, cleanup } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import TaskDeadlineReminders from './TaskDeadlineReminders';
+import api from '../api/axios';
+jest.mock('../api/axios', () => ({ get: jest.fn() }));
+jest.mock('../context/AuthContext', () => ({ useAuth: () => ({ user: { id: 23 } }) }));
+jest.mock('../context/LanguageContext', () => ({ useLang: () => ({ lang: 'ru' }) }));
+jest.mock('react-router-dom', () => ({ Link: ({ children, to, ...props }) => <a href={to} {...props}>{children}</a> }), { virtual: true });
+afterEach(() => { cleanup(); jest.useRealTimers(); });
+test('deadline is reminded once per threshold, and returns at the next threshold', async () => {
+  localStorage.clear(); jest.useFakeTimers();
+  const now = Date.now();
+  const task = { id: 4, title: 'Prepare report', status: 'в_работе', due_date: new Date(now + 2 * 3600000).toISOString() };
+  api.get.mockResolvedValue({ data: { tasks: [task], serverNow: new Date(now).toISOString() } });
+  render(<TaskDeadlineReminders />); await act(async () => {});
+  expect(screen.getByText('Prepare report')).toBeInTheDocument();
+  await act(async () => { jest.advanceTimersByTime(60000); });
+  expect(screen.queryByText('Prepare report')).not.toBeInTheDocument();
+  api.get.mockResolvedValue({ data: { tasks: [task], serverNow: new Date(now + 90 * 60000).toISOString() } });
+  await act(async () => { jest.advanceTimersByTime(60000); });
+  expect(screen.getByText('Prepare report')).toBeInTheDocument();
+});

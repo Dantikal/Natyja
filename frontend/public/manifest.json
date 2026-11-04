@@ -1,0 +1,15 @@
+{
+  "short_name": "Натыйжа",
+  "name": "Натыйжа — задачи и отчёты",
+  "icons": [
+    {
+      "src": "natyyzha-emblem.png",
+      "sizes": "1312x1199",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1a3a5c",
+  "background_color": "#ffffff"
+}

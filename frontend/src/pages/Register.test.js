@@ -1,0 +1,20 @@
+import {render,screen,fireEvent,waitFor} from '@testing-library/react';
+import Register from './Register';
+import {LanguageProvider} from '../context/LanguageContext';
+import api from '../api/axios';
+const mockRegister=jest.fn();
+jest.mock('../api/axios',()=>({get:jest.fn()}));
+jest.mock('../context/AuthContext',()=>({useAuth:()=>({register:mockRegister})}));
+jest.mock('../components/Brand',()=>()=>null);
+jest.mock('../components/Captcha',()=>({onChange})=><button type="button" onClick={()=>onChange({id:'challenge',answer:'AB2CD3'})}>Пройти проверку</button>);
+jest.mock('react-router-dom',()=>({Link:({to,children})=><a href={to}>{children}</a>,useNavigate:()=>jest.fn()}));
+test('manual names replace IDs in registration payload and can switch back to dictionaries',async()=>{
+ localStorage.setItem('lang','ru');api.get.mockResolvedValue({data:[{id:1,name:'Из списка'}]});mockRegister.mockResolvedValue({});render(<LanguageProvider><Register/></LanguageProvider>);
+ await screen.findAllByText('Из списка');
+ const rank=screen.getByLabelText('Воинское звание *');fireEvent.change(rank,{target:{value:'__custom__'}});fireEvent.change(screen.getByLabelText('Своё значение'),{target:{value:'Моё звание'}});
+ fireEvent.change(screen.getByLabelText('Должность *'),{target:{value:'__custom__'}});fireEvent.change(screen.getAllByLabelText('Своё значение')[1],{target:{value:'Моя должность'}});
+ fireEvent.change(screen.getByLabelText('Войсковая часть *'),{target:{value:'__custom__'}});fireEvent.change(screen.getAllByLabelText('Своё значение')[2],{target:{value:'Моя часть'}});
+ fireEvent.change(rank,{target:{value:'1'}});expect(screen.getAllByLabelText('Своё значение').length).toBe(2);
+ fireEvent.change(screen.getByLabelText('ФИО *'),{target:{value:'Тестовый пользователь'}});fireEvent.change(screen.getByLabelText('Email *'),{target:{value:'fixture@example.invalid'}});fireEvent.change(screen.getByLabelText('Пароль * (мин. 8 символов)'),{target:{value:'Fixture123!'}});fireEvent.change(screen.getByLabelText('Фото * (JPG, PNG, до 5 МБ)'),{target:{files:[new File(['fixture'],'photo.png',{type:'image/png'})]}});
+ fireEvent.click(screen.getByRole('button',{name:'Пройти проверку'}));fireEvent.submit(screen.getByRole('button',{name:'Отправить заявку'}).closest('form'));await waitFor(()=>expect(mockRegister).toHaveBeenCalledTimes(1));const data=mockRegister.mock.calls[0][0];expect(data.get('rankId')).toBe('1');expect(data.get('customRank')).toBeNull();expect(data.get('positionId')).toBe('');expect(data.get('customPosition')).toBe('Моя должность');expect(data.get('customUnit')).toBe('Моя часть');expect(mockRegister.mock.calls[0][1]).toEqual({id:'challenge',answer:'AB2CD3'});
+});

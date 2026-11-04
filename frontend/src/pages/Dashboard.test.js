@@ -1,0 +1,22 @@
+import {render,screen,fireEvent,waitFor} from '@testing-library/react';
+import Dashboard from './Dashboard';
+import api from '../api/axios';
+import {LanguageProvider} from '../context/LanguageContext';
+jest.mock('../api/axios',()=>({get:jest.fn()}));
+jest.mock('../context/AuthContext',()=>({useAuth:()=>({user:{role:'commander',unitId:1}})}));
+jest.mock('react-router-dom',()=>({Link:({children,to,...props})=><a href={to} {...props}>{children}</a>}));
+jest.mock('../components/SoldierForm',()=>()=>null);
+test('commander sees own-unit title and period filters, never fetches or displays a unit selector',async()=>{
+ localStorage.setItem('lang','ru');api.get.mockResolvedValue({data:[]});
+ render(<LanguageProvider><Dashboard/></LanguageProvider>);
+ await screen.findByRole('heading',{name:'Личный состав моей части'});
+ expect(screen.queryByText('Войсковая часть:')).toBeNull();
+ expect(api.get).not.toHaveBeenCalled();
+ for(const name of ['Неделя','Месяц','Квартал','6 месяцев','Год'])expect(screen.getByRole('option',{name})).toBeTruthy();
+ fireEvent.change(screen.getByLabelText('Период'),{target:{value:'week'}});
+ fireEvent.click(screen.getByRole('button',{name:'Показать рейтинг'}));
+ await waitFor(()=>expect(api.get).toHaveBeenCalledTimes(1));
+ expect(api.get.mock.calls[0][0]).toBe('/soldiers');
+ expect(api.get.mock.calls[0][1].params).toEqual(expect.objectContaining({from:expect.any(String),to:expect.any(String)}));
+ await screen.findByText('Нет данных');
+});

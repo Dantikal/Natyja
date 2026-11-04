@@ -1,0 +1,27 @@
+.help-launcher { position:fixed; right:18px; bottom:calc(18px + env(safe-area-inset-bottom, 0px)); z-index:1150; display:flex; align-items:center; gap:8px; min-height:46px; padding:10px 16px; border:1px solid var(--line, #cbd5e1); border-radius:24px; background:var(--surface, #fff); color:var(--ink, #192b3c); box-shadow:0 3px 16px #0002; cursor:pointer; font:inherit; font-weight:600; }
+.help-launcher>span { display:grid; place-items:center; width:22px; height:22px; border:1.7px solid currentColor; border-radius:50%; font-size:15px; }
+.help-launcher:focus-visible,.help-guide summary:focus-visible { outline:3px solid #7ca9dd; outline-offset:3px; }
+body:has(.report-editor-modal) .help-launcher { bottom:calc(150px + env(safe-area-inset-bottom, 0px)); }
+.help-overlay { position:fixed; inset:0; z-index:1600; display:flex; justify-content:flex-end; background:#0008; padding:16px; }
+.help-dialog { display:flex; flex-direction:column; width:min(690px, 100%); max-height:100%; min-height:0; background:var(--surface, #fff); color:var(--ink, #192b3c); border:1px solid var(--line, #cbd5e1); border-radius:14px; box-shadow:0 12px 48px #0003; }
+.help-heading { flex:0 0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:20px 22px; border-bottom:1px solid var(--line, #dde3ea); }
+.help-heading h2 { margin:0; color:var(--ink, #192b3c); font-size:24px; }
+.help-heading p { margin:5px 0 0; color:var(--muted, #607080); font-size:13px; }
+.help-heading button { flex:0 0 auto; min-height:44px; }
+.help-scroll { min-height:0; overflow:auto; overscroll-behavior:contain; padding:0 22px 24px; }
+.help-guide { line-height:1.7; overflow-wrap:anywhere; }
+.help-intro { padding:14px 16px; border-left:3px solid var(--accent, #526d89); background:var(--surface-soft, #f3f6f9); border-radius:6px; }
+.help-search { display:block; font-weight:600; }
+.help-search input { display:block; width:100%; min-height:44px; margin-top:6px; padding:10px 12px; border:1px solid var(--line, #cbd5e1); border-radius:8px; background:var(--surface, #fff); color:var(--ink, #192b3c); font:inherit; }
+.help-result-count,.help-contact { color:var(--muted, #607080); font-size:13px; }
+.help-topic { margin:10px 0; border:1px solid var(--line, #dce3eb); border-radius:9px; }
+.help-topic summary { cursor:pointer; padding:14px 16px; min-height:48px; font-weight:600; }
+.help-topic ol { margin:0; padding:0 20px 18px 40px; }
+.help-topic li+li { margin-top:12px; }
+.help-contact { margin-top:20px; border-top:1px solid var(--line, #dde3ea); padding-top:16px; }
+.help-page { max-width:850px; padding-bottom:100px!important; }
+.help-page-heading { display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; align-items:center; margin-bottom:20px; }
+.help-page-heading h1 { margin:0; color:var(--ink, #192b3c); }
+.help-page-actions { display:flex; gap:8px; align-items:center; }
+@media(max-width:640px) { .help-overlay { padding:0; } .help-dialog { width:100%; border-radius:0; } .help-heading { padding:16px; } .help-scroll { padding:0 16px 20px; } .help-launcher { right:12px; bottom:calc(12px + env(safe-area-inset-bottom, 0px)); padding:9px 13px; } .help-heading h2 { font-size:21px; } }
+@media print { .help-launcher,.help-page-actions,.navbar { display:none!important; } .help-page { max-width:none; } }

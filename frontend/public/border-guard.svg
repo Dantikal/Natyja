@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" fill="none">
+<title>Натыйжа — пограничный знак</title>
+<defs><linearGradient id="field" x1="20" y1="20" x2="210" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#193e35"/><stop offset="1" stop-color="#0b221e"/></linearGradient></defs>
+<path d="M120 9 219 40v104c0 57-37 97-99 127-62-30-99-70-99-127V40Z" fill="url(#field)" stroke="#c9b780" stroke-width="2.5"/>
+<path d="M120 19 209 47v97c0 50-32 87-89 116-57-29-89-66-89-116V47Z" stroke="#c9b780" stroke-width=".7"/>
+<path d="M120 35 124 47 137 47 126 55 130 68 120 60 110 68 114 55 103 47 116 47Z" fill="#c9b780"/>
+<g stroke="#c9b780" stroke-linejoin="round" stroke-linecap="round">
+<path d="M120 105c-6-12-16-14-25-13l7-8 14 1 10 9 9 4-6 5-1 19 9 15-17 35-17-35 9-15Z" fill="#c9b780" stroke-width="1.2"/>
+<path d="M112 109C91 107 64 93 45 72l3 22c19 19 35 28 53 33M108 119C83 115 64 106 49 94l5 18c15 12 31 19 48 22M105 130c-18-3-33-8-48-17l7 17c12 7 23 11 38 13M104 141l-34-10 9 16 23 6" stroke-width="4"/>
+<path d="M128 109c21-2 48-16 67-37l-3 22c-19 19-35 28-53 33M132 119c25-4 44-13 59-25l-5 18c-15 12-31 19-48 22M135 130c18-3 33-8 48-17l-7 17c-12 7-23 11-38 13M136 141l34-10-9 16-23 6" stroke-width="4"/>
+<path d="m113 164-7 16 14-7 14 7-7-16" stroke-width="2"/>
+<path d="M102 199h36M108 200v-26l12-9 12 9v26M109 183h22M109 191h22" stroke-width="2"/>
+<path d="M96 220c-21-10-35-27-39-49M144 220c21-10 35-27 39-49" stroke-width="1.3"/>
+</g>
+<g fill="#c9b780">
+<ellipse cx="57" cy="177" rx="3" ry="9" transform="rotate(-35 57 177)"/><ellipse cx="65" cy="178" rx="3" ry="8" transform="rotate(27 65 178)"/>
+<ellipse cx="62" cy="191" rx="3" ry="9" transform="rotate(-45 62 191)"/><ellipse cx="73" cy="190" rx="3" ry="8" transform="rotate(30 73 190)"/>
+<ellipse cx="72" cy="204" rx="3" ry="9" transform="rotate(-55 72 204)"/><ellipse cx="83" cy="201" rx="3" ry="8" transform="rotate(15 83 201)"/>
+<ellipse cx="85" cy="215" rx="3" ry="9" transform="rotate(-65 85 215)"/><ellipse cx="94" cy="210" rx="3" ry="8" transform="rotate(5 94 210)"/>
+<ellipse cx="183" cy="177" rx="3" ry="9" transform="rotate(35 183 177)"/><ellipse cx="175" cy="178" rx="3" ry="8" transform="rotate(-27 175 178)"/>
+<ellipse cx="178" cy="191" rx="3" ry="9" transform="rotate(45 178 191)"/><ellipse cx="167" cy="190" rx="3" ry="8" transform="rotate(-30 167 190)"/>
+<ellipse cx="168" cy="204" rx="3" ry="9" transform="rotate(55 168 204)"/><ellipse cx="157" cy="201" rx="3" ry="8" transform="rotate(-15 157 201)"/>
+<ellipse cx="155" cy="215" rx="3" ry="9" transform="rotate(65 155 215)"/><ellipse cx="146" cy="210" rx="3" ry="8" transform="rotate(-5 146 210)"/>
+</g>
+<circle cx="114" cy="92" r="1.6" fill="#102e27"/>
+<path d="M104 221h32" stroke="#c9b780" stroke-width=".7"/>
+<text x="120" y="237" fill="#c9b780" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="600" letter-spacing="2.6">ЧЕК АРА</text>
+</svg>

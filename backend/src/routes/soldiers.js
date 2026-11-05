@@ -33,7 +33,7 @@ router.get('/', authenticate, async (req, res) => {
     if (req.query.from || req.query.to) {
       const valid = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0,10) === value;
       if (!valid(req.query.from) || !valid(req.query.to) || req.query.from > req.query.to) return res.status(400).json({error:'Проверьте период'});
-      query=query.replace('/*RATING_PERIOD*/','AND event_date >= ? AND event_date < DATE_ADD(?, INTERVAL 1 DAY)');
+      query=query.replace('/*RATING_PERIOD*/',"AND event_date >= ? AND event_date < (CAST(? AS date) + INTERVAL '1 day')");
       params.push(req.query.from,req.query.to);
     }
 
@@ -53,7 +53,7 @@ router.get('/', authenticate, async (req, res) => {
       return res.json([]);
     }
 
-    query += ' ORDER BY task_rating DESC, s.full_name';
+    query += ' ORDER BY task_rating DESC NULLS LAST, s.full_name';
 
     const [rows] = await pool.execute(query, params);
     res.json(rows);

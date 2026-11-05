@@ -33,7 +33,7 @@ async function tasks(user, id) {
   const parameters = [user.soldier_id];
   let where = "soldier_id=? AND status IN ('новая','в_работе','на_проверке')";
   if (id) { where = 'soldier_id=? AND id=?'; parameters.push(id); }
-  const [rows] = await pool.execute(`SELECT id,title,description,status,DATE_FORMAT(due_date,'%Y-%m-%d') AS due_day FROM tasks WHERE ${where} ORDER BY due_date ASC LIMIT 50`, parameters);
+  const [rows] = await pool.execute(`SELECT id,title,description,status,to_char(due_date,'YYYY-MM-DD') AS due_day FROM tasks WHERE ${where} ORDER BY due_date ASC LIMIT 50`, parameters);
   // This schema stores a DATE, not a time. Its deadline is the end of that day in Bishkek.
   return rows.map(task => ({ ...task, due_date: task.due_day ? `${task.due_day}T23:59:59.999+06:00` : null }));
 }

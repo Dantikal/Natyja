@@ -23,7 +23,7 @@ router.post('/ranks', authenticate, requireAdmin, async (req, res) => {
     );
     res.status(201).json({ id: r.insertId, name: name.trim(), category, sort_order: sortOrder });
   } catch (err) {
-    if (err.code === 'ER_DUP_ENTRY') return res.status(409).json({ error: 'Уже есть' });
+    if (err.code === '23505') return res.status(409).json({ error: 'Уже есть' });
     res.status(500).json({ error: 'Внутренняя ошибка сервера' });
   }
 });
@@ -54,7 +54,7 @@ router.post('/units', authenticate, requireAdmin, async (req, res) => {
     const [r] = await pool.execute('INSERT INTO units (name) VALUES (?)', [name.trim()]);
     res.status(201).json({ id: r.insertId, name: name.trim() });
   } catch (err) {
-    if (err.code === 'ER_DUP_ENTRY') return res.status(409).json({ error: 'Уже есть' });
+    if (err.code === '23505') return res.status(409).json({ error: 'Уже есть' });
     res.status(500).json({ error: 'Внутренняя ошибка сервера' });
   }
 });
@@ -85,7 +85,7 @@ router.post('/positions', authenticate, requireAdmin, async (req, res) => {
     const [r] = await pool.execute('INSERT INTO positions (name) VALUES (?)', [name.trim()]);
     res.status(201).json({ id: r.insertId, name: name.trim() });
   } catch (err) {
-    if (err.code === 'ER_DUP_ENTRY') return res.status(409).json({ error: 'Уже есть' });
+    if (err.code === '23505') return res.status(409).json({ error: 'Уже есть' });
     res.status(500).json({ error: 'Внутренняя ошибка сервера' });
   }
 });
@@ -119,7 +119,7 @@ router.post('/military-units', authenticate, requireAdmin, async (req, res) => {
     );
     res.status(201).json({ id: r.insertId, name: name.trim(), location: location.trim() });
   } catch (err) {
-    if (err.code === 'ER_DUP_ENTRY') return res.status(409).json({ error: 'Уже есть' });
+    if (err.code === '23505') return res.status(409).json({ error: 'Уже есть' });
     res.status(500).json({ error: 'Внутренняя ошибка сервера' });
   }
 });

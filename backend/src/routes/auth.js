@@ -51,7 +51,7 @@ router.post('/register', botProtection.registerLimit, botProtection.verify('regi
 
     saved=true;res.status(201).json({ message: 'Заявка отправлена. Ожидайте одобрения.' });
   } catch (err) {
-    if (err.code === 'ER_DUP_ENTRY') {
+    if (err.code === '23505') {
       return res.status(409).json({ error: 'Этот email уже зарегистрирован' });
     }
     res.status(err.status||500).json({ error: err.status?err.message:'Ошибка регистрации' });

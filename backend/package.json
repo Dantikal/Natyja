@@ -5,7 +5,9 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node src/server.js"
+    "dev": "node src/server.js",
+    "migrate:mysql": "node scripts/migrate-mysql-to-postgres.cjs",
+    "test:postgres": "node --test postgres.integration.test.cjs postgres.test.cjs"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -17,10 +19,13 @@
     "jsonwebtoken": "^9.0.2",
     "mammoth": "1.13.0",
     "multer": "^2.5.0",
-    "mysql2": "^3.11.5",
     "pdf-parse": "2.4.5",
+    "pg": "^8.23.1",
     "sharp": "0.35.5",
     "svg-captcha": "^1.4.0",
     "tesseract.js": "7.0.0"
+  },
+  "devDependencies": {
+    "mysql2": "^3.24.6"
   }
 }

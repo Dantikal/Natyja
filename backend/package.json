@@ -7,7 +7,8 @@
     "start": "node src/server.js",
     "dev": "node src/server.js",
     "migrate:mysql": "node scripts/migrate-mysql-to-postgres.cjs",
-    "test:postgres": "node --test postgres.integration.test.cjs postgres.test.cjs"
+    "test:postgres": "node --test postgres.integration.test.cjs postgres.test.cjs",
+    "ai:check": "node scripts/check-ai.cjs"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",

@@ -49,6 +49,7 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 migrate().then(() => {
+  if (process.env.AI_WARMUP !== '0') void require('./config/ollama').warmup().then(()=>console.log('AI model ready')).catch(error=>console.error('AI warmup:',error.message));
   void require('./services/ideaReview').start().catch(error=>console.error('Idea queue:',error.code||error.name));
   app.listen(PORT, process.env.BIND_HOST || '127.0.0.1', () => {
     console.log(`✅ Сервер запущен: http://localhost:${PORT}`);

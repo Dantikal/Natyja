@@ -10,8 +10,8 @@
     },
     {
       "path": "DEPLOY.md",
-      "bytes": 10616,
-      "sha256": "fc4a2baf991786a317bfb0ac736b69f82558356d684f7e07f728241f527bdcaa"
+      "bytes": 12107,
+      "sha256": "3a393996003e58eead7342bba0298648114cc143d61ed2acb72e0604077932f2"
     },
     {
       "path": "PERFORMANCE-REVIEW.md",
@@ -35,13 +35,13 @@
     },
     {
       "path": "UPLOAD-STATUS.md",
-      "bytes": 1509,
-      "sha256": "439cf50de3e618df52c3ac795a7030e194869901d22ad3651a1632d0c74a8ca1"
+      "bytes": 1752,
+      "sha256": "ebb5b5684715e7e3a682fc49af4922c23b89b7e621b6bf52c453d55c7b16104c"
     },
     {
       "path": "backend/.env.example",
-      "bytes": 504,
-      "sha256": "7b94191d74db446c82d188facc6258c43ce89c00e0c4c652a8e2a4369c62f0b7"
+      "bytes": 685,
+      "sha256": "a1ae2a7505e8e88895dd45f0808da749324ed2c0f228326195b5589672d1abc4"
     },
     {
       "path": "backend/BOT-PROTECTION.md",
@@ -90,8 +90,8 @@
     },
     {
       "path": "backend/package.json",
-      "bytes": 809,
-      "sha256": "9a892f19efbd42128abb64d4aa6675342de126b59603208d71edb7a47a4386d1"
+      "bytes": 854,
+      "sha256": "20e27f6f8d7084db1b2ff3fc7d36611ac95d1159b863a9c009ff9762053b377e"
     },
     {
       "path": "backend/photo-support.test.cjs",
@@ -260,13 +260,13 @@
     },
     {
       "path": "backend/src/server.js",
-      "bytes": 2895,
-      "sha256": "730fea89957c8318d208de9efb64d8aa85dfdefefa5639240508fd47970a89df"
+      "bytes": 3071,
+      "sha256": "d5aa6fb009e59aef4bec4d245d30b8b8fef86fa39bffcf7f61eff5dbe5362d1c"
     },
     {
       "path": "backend/src/services/assistant.js",
-      "bytes": 10409,
-      "sha256": "26b8352e3178d4d31d1a97121d1592d4694dc6955d3e2739426737784a71318f"
+      "bytes": 10155,
+      "sha256": "0c2e9ffbae418cf134189254c88e8a9e6988f27dbd64bc57549984491d23ec79"
     },
     {
       "path": "backend/src/services/documentText.cjs",
@@ -295,8 +295,8 @@
     },
     {
       "path": "backend/src/services/supportAssistant.js",
-      "bytes": 6483,
-      "sha256": "206ad41657b8969e63afc68f648047403bf50e46b4eb7d40ca8fba277de66673"
+      "bytes": 6665,
+      "sha256": "8b5e653f582cb4e4513a03b8c10beb45536830a4b4f4883c701795e8d1f2606c"
     },
     {
       "path": "backend/src/services/supportStore.js",
@@ -897,6 +897,26 @@
       "path": "frontend/src/utils/taskDeadlines.test.js",
       "bytes": 1068,
       "sha256": "e101a1a63f3073af39f6def680c2ffb5e2cd6ed0e0002ee6be7c3e1b345d2a5d"
+    },
+    {
+      "path": "backend/src/config/ollama.js",
+      "bytes": 1339,
+      "sha256": "5b9e2b7d0d1b8f255b3939bdb0eb33012669e51c91d4f3aa05370c8b34929483"
+    },
+    {
+      "path": "backend/scripts/check-ai.cjs",
+      "bytes": 903,
+      "sha256": "e190798fc1771883bc61deb62a111c3132a757205cf0bc3d3b176b749d07b4f8"
+    },
+    {
+      "path": "backend/ollama.test.cjs",
+      "bytes": 1383,
+      "sha256": "50c106bb53c62af984db814ced5fdfb0d33a01035119905807966d2e371c7a27"
+    },
+    {
+      "path": "AI-SPEED-UPDATE.md",
+      "bytes": 4664,
+      "sha256": "3e129c51ff6e39841d07af8580139ac6fcd97fb5098f5c7db93a658c3cc59321"
     }
   ]
 }

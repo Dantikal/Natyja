@@ -1,9 +1,9 @@
 // Existing completions retain their original 1 point; new reviews store 3/5/7.
-const events = `SELECT soldier_id,NULL AS author_id,CASE WHEN status='выполнена' THEN COALESCE(awarded_points,1) ELSE 0 END AS earned,0 AS idea_points,0 AS penalty,
+const events = `SELECT soldier_id,CAST(NULL AS int) AS author_id,CASE WHEN status='выполнена' THEN COALESCE(awarded_points,1) ELSE 0 END AS earned,0 AS idea_points,0 AS penalty,
  CASE WHEN status='выполнена' THEN 1 ELSE 0 END AS done,
  CASE WHEN status='выполнена' AND DATE(completed_at)>DATE(due_date) THEN 1 ELSE 0 END AS late,
  CASE WHEN status='провалена' THEN 1 ELSE 0 END AS failed,
- CASE WHEN status IN ('новая','в_работе') AND DATE(due_date)<CURDATE() THEN 1 ELSE 0 END AS overdue,
+ CASE WHEN status IN ('новая','в_работе') AND DATE(due_date)<CURRENT_DATE THEN 1 ELSE 0 END AS overdue,
  COALESCE(approved_at,completed_at,due_date) AS event_date FROM tasks
  UNION ALL SELECT t.soldier_id,NULL,0,0,1,0,0,0,0,h.created_at FROM task_history h JOIN tasks t ON t.id=h.task_id WHERE h.action='Отклонено'
  UNION ALL SELECT soldier_id,author_id,0,10,0,0,0,0,0,reviewed_at FROM ideas WHERE status='approved'`;

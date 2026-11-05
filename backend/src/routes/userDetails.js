@@ -57,13 +57,13 @@ router.patch('/:id', async (req, res) => {
     await connection.beginTransaction();
     const [[user]] = await connection.execute('SELECT soldier_id FROM users WHERE id=? FOR UPDATE', [req.params.id]);
     if (!user) { await connection.rollback(); return res.status(404).json({ error: 'Пользователь не найден' }); }
-    await connection.execute('UPDATE users SET full_name=?,email=?,rank_id=?,position_id=?,unit_id=?,custom_rank=IF(? IS NULL,custom_rank,NULL),custom_position=IF(? IS NULL,custom_position,NULL),custom_unit=IF(? IS NULL,custom_unit,NULL) WHERE id=?', [fullName.trim(), email.trim().toLowerCase(), rankId || null, positionId || null, unitId || null,rankId||null,positionId||null,unitId||null,req.params.id]);
+    await connection.execute('UPDATE users SET full_name=?,email=?,rank_id=?,position_id=?,unit_id=?,custom_rank=CASE WHEN CAST(? AS int) IS NULL THEN custom_rank ELSE NULL END,custom_position=CASE WHEN CAST(? AS int) IS NULL THEN custom_position ELSE NULL END,custom_unit=CASE WHEN CAST(? AS int) IS NULL THEN custom_unit ELSE NULL END WHERE id=?', [fullName.trim(), email.trim().toLowerCase(), rankId || null, positionId || null, unitId || null,rankId||null,positionId||null,unitId||null,req.params.id]);
     if (user.soldier_id) await connection.execute('UPDATE soldiers SET full_name=?,rank_id=?,position_id=?,unit_id=?,years_of_service=?,reprimands=?,characteristic=? WHERE id=?', [fullName.trim(),rankId || null,positionId || null,unitId || null,Number(yearsOfService),Number(reprimands),characteristic,user.soldier_id]);
     await connection.execute('INSERT INTO user_activity (actor_user_id,target_user_id,action,details) VALUES (?,?,?,?)', [req.user.id,req.params.id,'Данные пользователя изменены','Обновлены данные аккаунта и личной карточки']);
     await connection.commit(); res.json({ message: 'Данные сохранены' });
   } catch (err) {
     await connection.rollback();
-    res.status(err.code === 'ER_DUP_ENTRY' ? 409 : 400).json({ error: err.code === 'ER_DUP_ENTRY' ? 'Этот email уже зарегистрирован' : 'Не удалось сохранить данные. Проверьте выбранные значения.' });
+    res.status(err.code === '23505' ? 409 : 400).json({ error: err.code === '23505' ? 'Этот email уже зарегистрирован' : 'Не удалось сохранить данные. Проверьте выбранные значения.' });
   } finally { connection.release(); }
 });
 

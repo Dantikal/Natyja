@@ -1,9 +1,9 @@
 const { fork } = require('node:child_process');
 const path = require('node:path');
 
-// Local reference model installed on this computer.
-const model = 'qwen3:4b-instruct';
-const origin = 'http://127.0.0.1:11434';
+const runtime = require('../config/ollama');
+const model = runtime.supportModel;
+const origin = runtime.origin;
 
 function extract(buffer, extension) {
   return new Promise((resolve, reject) => {
@@ -89,9 +89,9 @@ async function answer({ message, history, lang, sources, format }) {
   sources = (sources || []).slice(0, 8).filter(source => typeof source.text === 'string').map(source => ({ ...source, text: source.text.slice(0, source.kind === 'task' ? 2000 : 1100) }));
   history = history.slice(-4).map(item => ({ role: item.role, content: item.content.slice(0, 1000) }));
   const response = await fetch(origin + '/api/chat', {
-    method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(180000),
-    body: JSON.stringify({ model, stream: false, keep_alive: '10m', ...(format ? { format } : {}), options: { num_ctx: 8192, num_predict: 600, temperature: 0.15, repeat_penalty: 1.18 },
-      messages: [{ role: 'system', content: policy + (lang === 'ky' ? '\nЖөнөкөй кыргызча жооп бер.' : '\nОтвечай по-русски.') + '\nТекущее время UTC: ' + new Date().toISOString() + '\nСПРАВОЧНЫЕ ДАННЫЕ:\n' + sources.map((source, index) => `[${index + 1}] ${source.title}\n${source.text}`).join('\n\n') }, ...history, { role: 'user', content: message }] })
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(runtime.timeout),
+    body: JSON.stringify({ model, stream: false, think: false, keep_alive: runtime.keepAlive, ...(format ? { format } : {}), options: { ...runtime.options(Boolean(format)), temperature: 0.15, repeat_penalty: 1.18 },
+      messages: [{ role: 'system', content: policy + (lang === 'ky' ? '\nЖөнөкөй кыргызча жооп бер.' : '\nОтвечай по-русски.') + '\nЕсли не запрошен подробный разбор или перевод, отвечай кратко, без вводных повторов.' + '\nСПРАВОЧНЫЕ ДАННЫЕ:\n' + sources.map((source, index) => `[${index + 1}] ${source.title}\n${source.text}`).join('\n\n') + '\nТекущее время UTC: ' + new Date().toISOString() }, ...history, { role: 'user', content: message }] })
   });
   if (response.status === 404) throw new Error('MODEL_NOT_INSTALLED');
   if (!response.ok) throw new Error('MODEL_UNAVAILABLE');

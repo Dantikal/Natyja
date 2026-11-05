@@ -94,7 +94,7 @@ router.get('/notifications',authenticate,async(req,res,next)=>{try{
 }catch(e){next(e);}});
 router.post('/notifications/read',authenticate,async(req,res,next)=>{try{
  const ids=req.body.ids;if(!Array.isArray(ids)||ids.length>500||!ids.every(Number.isInteger))return res.sendStatus(400);
- if(ids.length)await pool.query('INSERT IGNORE INTO task_notification_reads (user_id,task_id) SELECT ?,id FROM tasks WHERE soldier_id=? AND id IN (?)',[req.user.id,req.user.soldier_id||0,ids]);res.json({ok:true});
+ if(ids.length)await pool.query('INSERT INTO task_notification_reads (user_id,task_id) SELECT ?,id FROM tasks WHERE soldier_id=? AND id = ANY(?::int[]) ON CONFLICT DO NOTHING',[req.user.id,req.user.soldier_id||0,ids]);res.json({ok:true});
 }catch(e){next(e);}});
 router.get('/my', authenticate, async (req, res) => {
   try {
@@ -188,7 +188,7 @@ router.post('/', authenticate, (req, res, next) => {
       const [parents] = await pool.execute('SELECT * FROM tasks WHERE id = ?', [parentTaskId]);
       if (role !== 'commander' || !parents.length || Number(parents[0].soldier_id) !== Number(req.user.soldier_id) || ['выполнена', 'провалена'].includes(parents[0].status)) return res.status(403).json({ error: 'Можно делегировать только свою активную задачу' });
       if (Number(soldierId) === Number(req.user.soldier_id)) return res.status(400).json({ error: 'Выберите подчинённого' });
-      if (dueDate > new Date(parents[0].due_date.getTime() - parents[0].due_date.getTimezoneOffset() * 60000).toISOString().slice(0, 10)) return res.status(400).json({ error: 'Срок подзадачи не может быть позже основной задачи' });
+      if (dueDate > parents[0].due_date) return res.status(400).json({ error: 'Срок подзадачи не может быть позже основной задачи' });
       parentTask = parents[0];
     }
     if (role === 'admin') {

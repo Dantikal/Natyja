@@ -3,12 +3,11 @@ const path = require('node:path');
 const { randomUUID } = require('node:crypto');
 
 const directory = process.env.ASSISTANT_DATA_DIR || path.resolve(__dirname, '../../assistant-data');
-// Модель по умолчанию — abliterated (без встроенного отказа).
-// Если её нет локально: ollama pull huihui_ai/qwen3-abliterated:4b
-const model = process.env.ASSISTANT_MODEL || 'huihui_ai/qwen3-abliterated:4b';
-const origin = process.env.OLLAMA_ORIGIN || 'http://127.0.0.1:11434';
-const requestTimeoutMs = Number(process.env.ASSISTANT_TIMEOUT_MS || 600000);
-const autoMemory = process.env.ASSISTANT_AUTO_MEMORY !== '0';
+const runtime = require('../config/ollama');
+const model = runtime.model;
+const origin = runtime.origin;
+const requestTimeoutMs = runtime.timeout;
+const autoMemory = process.env.ASSISTANT_AUTO_MEMORY === '1';
 const debugPrompt = process.env.ASSISTANT_DEBUG === '1';
 
 let writing = Promise.resolve();
@@ -97,10 +96,10 @@ async function callModel(messages, options = {}) {
     body: JSON.stringify({
       model,
       stream: false,
-      keep_alive: '10m',
+      think: false,
+      keep_alive: runtime.keepAlive,
       options: {
-        num_ctx: 16384,
-        num_predict: 4096,
+        ...runtime.options(),
         temperature: 0.8,
         repeat_penalty: 1.1,
         repeat_last_n: 512,

@@ -1,3 +1,4 @@
+import PasswordInput from '../components/PasswordInput';
 import { useLang } from "../context/LanguageContext";
 import Brand from '../components/Brand';
 import Captcha from '../components/Captcha';
@@ -129,11 +130,7 @@ export default function Register() {
           })} required />
           </label>
 
-          <label>{tr("Пароль * (мин. 8 символов)")}<input type="password" value={form.password} onChange={e => setForm({
-            ...form,
-            password: e.target.value
-          })} minLength={8} required />
-          </label>
+          <PasswordInput label={tr("Пароль * (мин. 8 символов)")} value={form.password} onChange={e => setForm({...form, password:e.target.value})} minLength={8} autoComplete="new-password" required />
 
           {[['rankId','customRank','Воинское звание *',ranks],['positionId','customPosition','Должность *',positions],['unitId','customUnit','Войсковая часть *',militaryUnits]].map(([id,text,title,options])=><DictionaryChoice key={id} id={id} title={title} value={form[id]} custom={form[text]} options={options} onSelect={value=>setForm(prev=>({...prev,[id]:value}))} onCustom={value=>setForm(prev=>({...prev,[text]:value}))} />)}
           <p className="account-help">{tr('Введённые вручную данные проверит администратор.')}</p>

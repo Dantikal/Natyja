@@ -7,8 +7,8 @@ router.get('/my', authenticate, async (req,res,next) => {
     const periods = [];
     for (const key of ['week','1','3','6','12']) {
       const range = periodRange(key);
-      const [[row]] = await pool.execute(`SELECT COALESCE(SUM(earned),0) AS taskPoints,COALESCE(SUM(idea_points),0) AS ideaPoints,COALESCE(SUM(penalty),0) AS penalties
-        FROM (${events}) events WHERE (soldier_id=? OR (soldier_id IS NULL AND author_id=?)) AND event_date>=? AND event_date<DATE_ADD(?,INTERVAL 1 DAY)`,[req.user.soldier_id||0,req.user.id,range.from,range.to]);
+      const [[row]] = await pool.execute(`SELECT COALESCE(SUM(earned),0) AS "taskPoints",COALESCE(SUM(idea_points),0) AS "ideaPoints",COALESCE(SUM(penalty),0) AS penalties
+        FROM (${events}) events WHERE (soldier_id=? OR (soldier_id IS NULL AND author_id=?)) AND event_date>=? AND event_date<(CAST(? AS date) + INTERVAL '1 day')`,[req.user.soldier_id||0,req.user.id,range.from,range.to]);
       periods.push({ key,...range,taskPoints:Number(row.taskPoints),ideaPoints:Number(row.ideaPoints),penalties:Number(row.penalties),total:Number(row.taskPoints)+Number(row.ideaPoints)-Number(row.penalties) });
     }
     res.json({ periods });

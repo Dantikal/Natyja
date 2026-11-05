@@ -13,4 +13,4 @@ async function main() {
   await pool.execute("INSERT INTO users (email,password_hash,full_name,role,approved) VALUES (?,?,?,'admin',1)", [email.trim().toLowerCase(), hash, fullName]);
   console.log('Administrator created. Existing accounts are never modified.');
 }
-main().catch(error => { console.error(error.code === 'ER_DUP_ENTRY' ? 'Account already exists; no changes made.' : error.code || error.message); process.exitCode = 1; }).finally(() => pool.end());
+main().catch(error => { console.error(error.code === '23505' ? 'Account already exists; no changes made.' : error.code || error.message); process.exitCode = 1; }).finally(() => pool.end());

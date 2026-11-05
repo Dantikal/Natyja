@@ -1,7 +1,7 @@
 {
-  "preparedAt": "2026-11-04T08:24:49.051Z",
+  "preparedAt": "2026-11-05T05:34:11.599Z",
   "destination": "Dantikal/Natyja",
-  "uploadStatus": "UPLOADED_TO_UPDATED_SITE",
+  "branch": "postgresql-password",
   "files": [
     {
       "path": ".gitignore",
@@ -9,9 +9,44 @@
       "sha256": "c3072e768d96cabd179ca56454b4a2254e715f7326051a81410c5d0dac298c60"
     },
     {
+      "path": "DEPLOY.md",
+      "bytes": 12107,
+      "sha256": "3a393996003e58eead7342bba0298648114cc143d61ed2acb72e0604077932f2"
+    },
+    {
+      "path": "PERFORMANCE-REVIEW.md",
+      "bytes": 4050,
+      "sha256": "320f596bb1506f3741be2e2618d834b30879391fed04247cb315432398666a75"
+    },
+    {
+      "path": "POSTGRESQL-UPDATE.md",
+      "bytes": 4660,
+      "sha256": "3bc3e6ee23417fbd01c1638e7bdffdebdd0f7df3fec25786a2df3ad2984e680d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1202,
+      "sha256": "1c434e9606d37b53538e37dda830f7acf9015cf488626c456cac8d2f022d579e"
+    },
+    {
+      "path": "SECURITY-REVIEW.md",
+      "bytes": 7002,
+      "sha256": "e46b59c5e146371d02a0180bc592101d430c01cb4a2b24fc041280a6033f5514"
+    },
+    {
+      "path": "UPLOAD-STATUS.md",
+      "bytes": 1752,
+      "sha256": "ebb5b5684715e7e3a682fc49af4922c23b89b7e621b6bf52c453d55c7b16104c"
+    },
+    {
       "path": "backend/.env.example",
-      "bytes": 362,
-      "sha256": "283610e538f63f470d10e66b1c05007d392bc23bd0a0f6449e71267b8efb89e1"
+      "bytes": 685,
+      "sha256": "a1ae2a7505e8e88895dd45f0808da749324ed2c0f228326195b5589672d1abc4"
+    },
+    {
+      "path": "backend/BOT-PROTECTION.md",
+      "bytes": 3033,
+      "sha256": "ea9b476dd0600b4ba2e909e882ee7632246d605bd8a176e176007e53e9444692"
     },
     {
       "path": "backend/assistant-support.test.cjs",
@@ -24,19 +59,9 @@
       "sha256": "233a82a13d35c34abb3aa652a250801745b3644cb45069c39953f1a63fdd7264"
     },
     {
-      "path": "backend/BOT-PROTECTION.md",
-      "bytes": 3033,
-      "sha256": "ea9b476dd0600b4ba2e909e882ee7632246d605bd8a176e176007e53e9444692"
-    },
-    {
       "path": "backend/local-knowledge.test.cjs",
       "bytes": 2918,
       "sha256": "e84487c966e5f325df4f0da74966ef8052495cc9bfd3bd3e89128f241b7a0959"
-    },
-    {
-      "path": "backend/ocr-data/eng.traineddata",
-      "bytes": 4113088,
-      "sha256": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
     },
     {
       "path": "backend/ocr-data/LICENSE",
@@ -49,24 +74,39 @@
       "sha256": "2c4783451bede2a0258925c1b32ac24cbb4c70bc26acb10179b3a817ab90396a"
     },
     {
+      "path": "backend/ocr-data/eng.traineddata",
+      "bytes": 4113088,
+      "sha256": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
+    },
+    {
       "path": "backend/ocr-data/rus.traineddata",
       "bytes": 3861738,
       "sha256": "e16e5e036cce1d9ec2b00063cf8b54472625b9e14d893a169e2b0dedeb4df225"
     },
     {
       "path": "backend/package-lock.json",
-      "bytes": 87367,
-      "sha256": "c915d3edd09348447e6eb435c4c5decc46ac9bebe5104f97fe6c282730b61819"
+      "bytes": 93027,
+      "sha256": "46554bdf927b7902cf4377384b8727070e2ec2ff776194e8ea3b0a5b73575a24"
     },
     {
       "path": "backend/package.json",
-      "bytes": 610,
-      "sha256": "f6f87f535450e32319b4ce056e7ca99c7fa1a5804bf4abffcb022f75e1ce7696"
+      "bytes": 854,
+      "sha256": "20e27f6f8d7084db1b2ff3fc7d36611ac95d1159b863a9c009ff9762053b377e"
     },
     {
       "path": "backend/photo-support.test.cjs",
       "bytes": 1072,
       "sha256": "559c43e07694d4153e81b6a94084b9483d79a5f9cb62df12da2343defbe9ab62"
+    },
+    {
+      "path": "backend/postgres.integration.test.cjs",
+      "bytes": 8764,
+      "sha256": "0ec39821db127967e902288c110aafeb348137fb48555f62bc118485ccb9b335"
+    },
+    {
+      "path": "backend/postgres.test.cjs",
+      "bytes": 1376,
+      "sha256": "eff9ecf0c2854d043396868b715183a78234abc6682f6f8e98de04bf4ca49089"
     },
     {
       "path": "backend/public-site.cjs",
@@ -90,8 +130,13 @@
     },
     {
       "path": "backend/scripts/create-admin.cjs",
-      "bytes": 1131,
-      "sha256": "967e32e5709fdc78caa9c8e129cd868bcad679c15204bcd10f0df772054f9e82"
+      "bytes": 1124,
+      "sha256": "afe8fa2a962988a4c5c54522f061f5b23672733dd4d202614bfd012ef5847488"
+    },
+    {
+      "path": "backend/scripts/migrate-mysql-to-postgres.cjs",
+      "bytes": 4067,
+      "sha256": "556825f8c9d173e451c01d90a3135c57353aaf1f57275ffc8c0b6a197449be20"
     },
     {
       "path": "backend/security.test.cjs",
@@ -100,13 +145,18 @@
     },
     {
       "path": "backend/src/config/db.js",
-      "bytes": 391,
-      "sha256": "661e5dc6f62870a4e2f3d1420c2df29ddfb64a01c60c3a0ce6f9ef77219c2cc7"
+      "bytes": 1025,
+      "sha256": "6a9aca97379e43e2be030b2ffb7051e4a7933183e0ef3705f31f4a451d190ea3"
     },
     {
       "path": "backend/src/config/migrate.js",
-      "bytes": 8214,
-      "sha256": "786d3c56a055bf4fdbc91ff4bde1a9998c5023c3884e7c9af2e9dde62315fe35"
+      "bytes": 572,
+      "sha256": "01a5e3c3c34cf60c541ff11ee75af13fe437f802a27bb54ce9e303dbce1395a4"
+    },
+    {
+      "path": "backend/src/config/postgres.js",
+      "bytes": 1590,
+      "sha256": "d33f5b325483d0490f612aa496bd207987d82ad167c261bc8ea95fbcd063ae04"
     },
     {
       "path": "backend/src/middleware/auth.js",
@@ -145,18 +195,18 @@
     },
     {
       "path": "backend/src/routes/assistantSupport.js",
-      "bytes": 10133,
-      "sha256": "5a551ed89803d7d4a400c60a1a43cb18fa66a7fa407f8c9dbb3a76801b42cbab"
+      "bytes": 10131,
+      "sha256": "85a43796b1d9f27d27e4775c4dc8359dc9fc062ff4a06d8f6426fd26e95e7b90"
     },
     {
       "path": "backend/src/routes/auth.js",
-      "bytes": 6157,
-      "sha256": "b2e0f98512e5433738c7818eb0a631247bc46488469f0086511cc12107dfc537"
+      "bytes": 6150,
+      "sha256": "d0d21a930c8e80c6ec195338f1b0f8b98995d85f51717284af660bb3e29b69bf"
     },
     {
       "path": "backend/src/routes/dictionaries.js",
-      "bytes": 5560,
-      "sha256": "a2dfb4e855d7822a24347a87885ba6cf870de2e3e9cf9d7266c48b84ad9bea77"
+      "bytes": 5532,
+      "sha256": "52a74152ff1498d72e883ca2693efb5687704e27f5053bc8ccf9c51fb27b4e7e"
     },
     {
       "path": "backend/src/routes/ideas.js",
@@ -170,13 +220,13 @@
     },
     {
       "path": "backend/src/routes/rating.js",
-      "bytes": 1069,
-      "sha256": "73069d54d4147a3d256787b2b371c7774370568cc69a5068144247e92aae5043"
+      "bytes": 1083,
+      "sha256": "d967724ff99601e28b71407c1d736fde539f01ab75745f456bb1b7be51b9d3f9"
     },
     {
       "path": "backend/src/routes/reportAssessments.js",
-      "bytes": 3423,
-      "sha256": "cfda0ccf84817c85e25b7bb77f27761387bb0d868c97f539e6348e36a3785de8"
+      "bytes": 3499,
+      "sha256": "395c568ea71a8c884975f1ed1b2c1ca4ad148ea1cd97eaa7aa35d3e23a751501"
     },
     {
       "path": "backend/src/routes/reports.js",
@@ -185,8 +235,8 @@
     },
     {
       "path": "backend/src/routes/soldiers.js",
-      "bytes": 10587,
-      "sha256": "9f57fd2b9c71c6d4fcb02b50b599a9cec8e4fd33fdc2537a0a11b573d25e739c"
+      "bytes": 10608,
+      "sha256": "57c0908cf29394c53c3656b8660f29004c832ebf37c91803247b4f6d9b401646"
     },
     {
       "path": "backend/src/routes/taskReview.js",
@@ -195,13 +245,13 @@
     },
     {
       "path": "backend/src/routes/tasks.js",
-      "bytes": 19586,
-      "sha256": "2c993c2fa5664742ea204b164ba941cf738d5ee3d8aa4c6d167b5d4700e9d0ca"
+      "bytes": 19514,
+      "sha256": "ba13651fd1798b90ffb5f4e136d0111aa9c8d1b7b12f2f7841a6fe4537386c00"
     },
     {
       "path": "backend/src/routes/userDetails.js",
-      "bytes": 7292,
-      "sha256": "c2e96f7512ccc6186bcf1bcc2bc51d62bd9feb464cc600a9ac77cbcb181f405a"
+      "bytes": 7377,
+      "sha256": "b890b0201395a686f34de7821ff7151c32b4d27f890d7739b9762e2e5a525a0e"
     },
     {
       "path": "backend/src/routes/users.js",
@@ -210,13 +260,13 @@
     },
     {
       "path": "backend/src/server.js",
-      "bytes": 2895,
-      "sha256": "730fea89957c8318d208de9efb64d8aa85dfdefefa5639240508fd47970a89df"
+      "bytes": 3071,
+      "sha256": "d5aa6fb009e59aef4bec4d245d30b8b8fef86fa39bffcf7f61eff5dbe5362d1c"
     },
     {
       "path": "backend/src/services/assistant.js",
-      "bytes": 10409,
-      "sha256": "26b8352e3178d4d31d1a97121d1592d4694dc6955d3e2739426737784a71318f"
+      "bytes": 10155,
+      "sha256": "0c2e9ffbae418cf134189254c88e8a9e6988f27dbd64bc57549984491d23ec79"
     },
     {
       "path": "backend/src/services/documentText.cjs",
@@ -235,8 +285,8 @@
     },
     {
       "path": "backend/src/services/rating.js",
-      "bytes": 2828,
-      "sha256": "dd0ea75740b578a23ca3b5185cc56dad236ff4e0f833a7f9bb1c1153e4cc34c0"
+      "bytes": 2844,
+      "sha256": "2feb9d42ce9fa06cf086c22759ba5aa9aa53cdf9cb75ae0276e87d13531b677e"
     },
     {
       "path": "backend/src/services/reportAssessment.js",
@@ -245,8 +295,8 @@
     },
     {
       "path": "backend/src/services/supportAssistant.js",
-      "bytes": 6483,
-      "sha256": "206ad41657b8969e63afc68f648047403bf50e46b4eb7d40ca8fba277de66673"
+      "bytes": 6665,
+      "sha256": "8b5e653f582cb4e4513a03b8c10beb45536830a4b4f4883c701795e8d1f2606c"
     },
     {
       "path": "backend/src/services/supportStore.js",
@@ -275,13 +325,8 @@
     },
     {
       "path": "database/schema.sql",
-      "bytes": 12185,
-      "sha256": "14e2d1b28bf1e7d759eb33cbc0e218b6136296751794fc614e89b386e062a736"
-    },
-    {
-      "path": "DEPLOY.md",
-      "bytes": 7387,
-      "sha256": "70e3a9862faac4d1c857af954f9a95d269a707a3c405c06d7f620cd0a38b13a6"
+      "bytes": 12726,
+      "sha256": "6c8af389262bfaef502f71a0c7a741c7d2da0f3d938c21a55e255442fcbfe8e4"
     },
     {
       "path": "frontend/package-lock.json",
@@ -349,16 +394,6 @@
       "sha256": "90d24bc3bf698ac1e173739502298ccca72adf1f564fab05f484b8c48d1cadd2"
     },
     {
-      "path": "frontend/src/admin.css",
-      "bytes": 6485,
-      "sha256": "b0c2dc65a0bd00bd455cac582969c726d38e85d02dce544537eb4b39c7166372"
-    },
-    {
-      "path": "frontend/src/api/axios.js",
-      "bytes": 1106,
-      "sha256": "be8f85142bd0ba1a663ae3f6c2d3d77fbfa6e4826900fe0f3672d67872d7d144"
-    },
-    {
       "path": "frontend/src/App.css",
       "bytes": 43142,
       "sha256": "1c189f68fbfba2b58f4216c862c3be342aed24b9937b2f4886e372f7d2463f56"
@@ -367,6 +402,16 @@
       "path": "frontend/src/App.js",
       "bytes": 3848,
       "sha256": "3ce633ac37c040bc2a0bea99dde3af9091566f871ddcc439f67dc4dd7d5b8a80"
+    },
+    {
+      "path": "frontend/src/admin.css",
+      "bytes": 6485,
+      "sha256": "b0c2dc65a0bd00bd455cac582969c726d38e85d02dce544537eb4b39c7166372"
+    },
+    {
+      "path": "frontend/src/api/axios.js",
+      "bytes": 1106,
+      "sha256": "be8f85142bd0ba1a663ae3f6c2d3d77fbfa6e4826900fe0f3672d67872d7d144"
     },
     {
       "path": "frontend/src/appearance.css",
@@ -502,6 +547,21 @@
       "path": "frontend/src/components/Navbar.test.js",
       "bytes": 1342,
       "sha256": "8f5723cd11a4e3ed1d38aaf2593a26510e4912bb8a79f40315e22431e3bcc1ac"
+    },
+    {
+      "path": "frontend/src/components/PasswordInput.css",
+      "bytes": 578,
+      "sha256": "853c09f280240b60efc24f22adf0c0fa1bb79a141f0d3d30e1e93891bc487e82"
+    },
+    {
+      "path": "frontend/src/components/PasswordInput.js",
+      "bytes": 943,
+      "sha256": "8f70b644c64de345ac93a3535299fb8b1152bb2e430b1ef16b5c30e75213f4e7"
+    },
+    {
+      "path": "frontend/src/components/PasswordInput.test.js",
+      "bytes": 890,
+      "sha256": "3a2caf0bbf9b4ca09c05413ff2a24251f008cbd7b50f0a27e971c71fe4012e3b"
     },
     {
       "path": "frontend/src/components/PointsSummary.css",
@@ -700,8 +760,8 @@
     },
     {
       "path": "frontend/src/pages/ChangePassword.js",
-      "bytes": 2612,
-      "sha256": "9f1d123bdf9a20fdd6e6c3ed0bddf6d32a498b8e68b6e22fe867da7cb58944c6"
+      "bytes": 2567,
+      "sha256": "fdb3d6d6160181d264773a2295ecf3d168c60183e92ceec87f92e4ad950a1530"
     },
     {
       "path": "frontend/src/pages/Dashboard.js",
@@ -735,8 +795,8 @@
     },
     {
       "path": "frontend/src/pages/Login.js",
-      "bytes": 2453,
-      "sha256": "a581798c9872e2c13fe74798ffb6c90c2764ad104e92cd73830aa743255a44e2"
+      "bytes": 2411,
+      "sha256": "fff65fcb90ce99667efd16f171c6ee4104f3551152a0a37eadfde7d05fb6f778"
     },
     {
       "path": "frontend/src/pages/Login.test.js",
@@ -755,8 +815,8 @@
     },
     {
       "path": "frontend/src/pages/Register.js",
-      "bytes": 8563,
-      "sha256": "7d5d216ae546d1a22e1e504b9970bf0a986a5cd4d4bc4ad0d3decfd7f09c969b"
+      "bytes": 8583,
+      "sha256": "fec8c6154b3c7cec7f9afa497bc328cbd83f73f1567c1ded60dcb41030a94408"
     },
     {
       "path": "frontend/src/pages/Register.test.js",
@@ -839,25 +899,24 @@
       "sha256": "e101a1a63f3073af39f6def680c2ffb5e2cd6ed0e0002ee6be7c3e1b345d2a5d"
     },
     {
-      "path": "PERFORMANCE-REVIEW.md",
-      "bytes": 4050,
-      "sha256": "320f596bb1506f3741be2e2618d834b30879391fed04247cb315432398666a75"
+      "path": "backend/src/config/ollama.js",
+      "bytes": 1339,
+      "sha256": "5b9e2b7d0d1b8f255b3939bdb0eb33012669e51c91d4f3aa05370c8b34929483"
     },
     {
-      "path": "README.md",
-      "bytes": 854,
-      "sha256": "ad7688168ae0345a086848afb61eb2586f9516050958e215e602d9ff18864a99"
+      "path": "backend/scripts/check-ai.cjs",
+      "bytes": 903,
+      "sha256": "e190798fc1771883bc61deb62a111c3132a757205cf0bc3d3b176b749d07b4f8"
     },
     {
-      "path": "SECURITY-REVIEW.md",
-      "bytes": 7002,
-      "sha256": "e46b59c5e146371d02a0180bc592101d430c01cb4a2b24fc041280a6033f5514"
+      "path": "backend/ollama.test.cjs",
+      "bytes": 1383,
+      "sha256": "50c106bb53c62af984db814ced5fdfb0d33a01035119905807966d2e371c7a27"
     },
     {
-      "path": "UPLOAD-STATUS.md",
-      "bytes": 7818,
-      "sha256": "12f63c64237fcba48a484924c5bf7a3888028db45b3c81644175c4945d9685e6"
+      "path": "AI-SPEED-UPDATE.md",
+      "bytes": 4664,
+      "sha256": "3e129c51ff6e39841d07af8580139ac6fcd97fb5098f5c7db93a658c3cc59321"
     }
-  ],
-  "branch": "updated-site"
+  ]
 }

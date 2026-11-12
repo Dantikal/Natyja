@@ -1,18 +1,61 @@
-node_modules/
-.env
-.env.*
-!.env.example
-backend/uploads/
-backend/assistant-data/
-backend/assistant-support-data/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Django local files
+backend/db.sqlite3
+backend/media/
+backend/staticfiles/
 *.log
-.codex-backup/
-frontend/build/
-frontend/build-next/
-.tools/
-technical-docs/qa-*/
-technical-docs/*.pdf
-*.sql
-!database/schema.sql
-*.zip
-*.exe
+
+# Environment variables
+.env
+backend/.env
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# TLS private keys must never be committed
+2026/*.key
+deploy/certificates/*.key
+munara-release.zip
+server-upload/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Renamed frontend: dependencies and generated files
+frontend1/node_modules/
+frontend1/dist/
+frontend1/dist-online/
+.local-preview/
+frontend1/.vite/
+frontend1/.env
+frontend1/.env.local
+frontend1/.env.*.local
+
+# Local database backups and recovery data
+/munara_db_backup.sql
+/recovery/
+
+backend/.document-previews/

@@ -1,0 +1,87 @@
+/* Screen layout; document paper dimensions and print styles remain separate. */
+@media screen {
+  .mobile-menu-toggle { display: none; }
+  .auth-shell { min-height: 100dvh; overflow-x: clip; overflow-y: visible; }
+  .auth-card { flex: 0 1 auto; max-width: 100%; min-width: 0; }
+  .auth-screen, .auth-card .panel, .auth-card .narrow { min-width: 0; max-width: 100%; }
+  .auth-card input, .auth-card select, .auth-card textarea { min-width: 0; max-width: 100%; }
+  .auth-brand h1 { overflow-wrap: anywhere; }
+  .password-input { min-width: 0; }
+  .password-input input { width: 100%; min-width: 0; }
+  .password-input button { flex-shrink: 0; }
+  .module-header, .module-actions { flex-wrap: wrap; gap: 8px; }
+  .dashboard-content :is(.module-panel, .dashboard-home, .module-with-templates) { min-width: 0; max-width: 100%; }
+}
+@media screen and (max-width: 1100px) {
+  .auth-screen {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 14px;
+  }
+  .auth-corner-brand, .auth-corner-platform-logo {
+    display: flex;
+    position: static;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    animation: none;
+    filter: none;
+    max-width: 100%;
+  }
+  .auth-corner-brand { grid-column: 1; justify-self: end; }
+  .auth-corner-platform-logo { grid-column: 2; justify-self: start; }
+  .auth-corner-brand .service-logo--large,
+  .auth-corner-brand .service-logo--large img,
+  .auth-corner-platform-logo img {
+    width: 76px; height: 76px; object-fit: contain;
+  }
+  .auth-card { grid-column: 1 / -1; }
+  .auth-brand > .service-logo { display: none; }
+}
+@media screen and (max-width: 980px) {
+  .app-shell:not(.auth-shell) { padding: 8px; }
+  .app-shell .dashboard-layout { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); gap: 8px; }
+  .app-shell .dashboard-sidebar { height: auto; max-height: 42dvh; padding: 8px; }
+  .mobile-menu-toggle { display: block; width: 100%; min-height: 44px; text-align: left; }
+  .dashboard-sidebar:not(.is-menu-open) .dashboard-user-card,
+  .dashboard-sidebar:not(.is-menu-open) .dashboard-sidebar__nav { display: none; }
+  .app-shell .dashboard-sidebar__nav { grid-template-columns: minmax(0, 1fr); }
+  .app-shell .dashboard-sidebar__nav button { min-height: 44px; }
+  .topbar { grid-template-columns: minmax(0, 1fr) auto; gap: 8px; min-height: 70px; padding: 8px 200px 8px 10px; }
+  .topbar-seal { display: none; }
+  .topbar nav { justify-self: end; }
+  .brand-lockup strong { font-size: clamp(13px, 2vw, 18px); }
+  .brand-lockup span { font-size: 11px; }
+  .dashboard-home__quick-grid, .stat-grid, .module-metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media screen and (max-width: 600px) {
+  .auth-shell { align-items: flex-start; padding: 64px 12px 20px; }
+  .auth-card, .auth-card--login, .auth-card--register { width: 100%; max-width: 460px; padding: 20px 16px; margin: 0 auto; }
+  .auth-brand { gap: 8px; }
+  .auth-brand h1 { font-size: clamp(19px, 5.3vw, 25px); line-height: 1.25; }
+  .auth-brand p { font-size: 12px; line-height: 1.5; }
+  .auth-brand .service-logo--large, .auth-brand .service-logo--large img { width: 60px; height: 60px; }
+  .auth-card .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .auth-card :is(input, select, textarea) { font-size: 16px; }
+  .auth-card input:not([type="checkbox"]):not([type="radio"]), .auth-card select, .auth-card button { min-height: 44px; }
+  .site-settings-trigger { top: 8px; right: 8px; min-height: 40px; padding: 7px 10px; font-size: 13px; }
+  .page-help-trigger { top: 8px; right: 145px; width: 40px; height: 40px; }
+  .app-shell:has(.dashboard-layout) > .topbar { padding: 52px 10px 8px; grid-template-columns: minmax(0, 1fr) auto; min-height: 0; margin-bottom: 8px; }
+  .brand-lockup span { display: none; }
+  .topbar nav button { min-height: 40px; padding: 8px 10px; }
+  .dashboard-home__quick-grid, .stat-grid, .module-metric-grid, .module-section-grid { grid-template-columns: minmax(0, 1fr); }
+  .dashboard-content .module-panel { padding: 12px; }
+  .admin-chat__layout { grid-template-columns: minmax(0, 1fr); }
+  .site-settings, .page-help { padding: 18px; }
+  .analysis-section-card { grid-template-columns: minmax(0, 1fr); }
+}
+@media screen and (min-width: 1920px) {
+  .app-shell .dashboard-layout { grid-template-columns: 270px minmax(0, 1fr); }
+  .dashboard-sidebar__nav button { font-size: 15px; }
+  .dashboard-content { font-size: 16px; }
+}
+@media (pointer: coarse) {
+  .dashboard-sidebar button, .module-back-button, .module-period-card, .module-section-card { min-height: 44px; }
+}

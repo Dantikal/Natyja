@@ -1,0 +1,348 @@
+/* Navigation styling is scoped to the sidebar; document layouts are unchanged. */
+.app-shell .dashboard-sidebar.sidebar-refined {
+ --sn-bg:#091b17;--sn-panel:#102720;--sn-line:#a8d5bf16;--sn-text:#dcebe3;--sn-muted:#839e91;--sn-accent:#9ed9b6;--sn-active:#1d4938;
+ background:linear-gradient(165deg,#10291f 0%,var(--sn-bg) 42%)!important;
+ border:1px solid var(--sn-line)!important;border-radius:18px!important;padding:18px 12px!important;
+ box-shadow:0 14px 40px #00110c20;scrollbar-width:thin;scrollbar-color:#658b7538 transparent;
+}
+:root[data-theme="blue"] .app-shell .dashboard-sidebar.sidebar-refined{--sn-bg:#102139;--sn-panel:#182e48;--sn-line:#a4c9f51c;--sn-text:#dfebfa;--sn-muted:#8ca5c4;--sn-accent:#9acaff;--sn-active:#244a70;background:linear-gradient(165deg,#1c3752,var(--sn-bg) 42%)!important}
+:root[data-theme="light"] .app-shell .dashboard-sidebar.sidebar-refined{--sn-bg:#f7f8f3;--sn-panel:#ffffff;--sn-line:#28473218;--sn-text:#2b4337;--sn-muted:#768276;--sn-accent:#427956;--sn-active:#e4efdf;background:linear-gradient(165deg,#fff,var(--sn-bg) 42%)!important;box-shadow:0 12px 34px #1b342108}
+.sidebar-eyebrow{display:flex;align-items:center;gap:9px;padding:0 4px 18px;color:var(--sn-text);font-size:10px;letter-spacing:.045em;font-weight:750}
+.sidebar-eyebrow__mark{display:grid;place-items:center;width:31px;height:34px;flex:none;color:var(--sn-accent);border:1px solid var(--sn-line);border-radius:9px;background:var(--sn-panel);font-size:12px;letter-spacing:-.04em}
+.sidebar-eyebrow small{display:block;color:var(--sn-muted);font-size:9px;font-weight:450;letter-spacing:.02em;margin-top:4px}
+.sidebar-live-dot{margin-left:auto;flex:none;width:5px;height:5px;border-radius:50%;background:var(--sn-accent);box-shadow:0 0 0 4px #8dd7ab0b}
+.app-shell .sidebar-refined .dashboard-user-card{display:grid;grid-template-columns:42px minmax(0,1fr);gap:10px;align-items:center;text-align:left;margin:0 0 19px;padding:13px 11px 11px;border:1px solid var(--sn-line);border-radius:13px;background:linear-gradient(140deg,#ffffff06,transparent),var(--sn-panel)}
+.app-shell .sidebar-refined .dashboard-user-card .profile-avatar{height:42px;width:42px;min-width:42px;margin:0;border:1px solid #b2dfc329;background:linear-gradient(145deg,#50735d,#193d2e);box-shadow:inset 0 1px #ffffff17;color:#f0f8f2;font-size:14px;border-radius:12px;overflow:hidden}
+.app-shell .sidebar-refined .dashboard-user-card .profile-avatar img{width:100%;height:100%;object-fit:cover}
+.app-shell .sidebar-refined .dashboard-user-card strong{display:block;color:var(--sn-text)!important;font-size:11px;line-height:1.5;font-weight:650;overflow-wrap:anywhere;letter-spacing:0}
+.app-shell .sidebar-refined .dashboard-user-card > div > span{display:flex;align-items:center;gap:5px;margin-top:3px;color:var(--sn-muted)!important;font-size:10px}
+.app-shell .sidebar-refined .dashboard-user-card .profile-open-button{grid-column:1/-1;display:flex;align-items:center;gap:8px;margin:5px 0 0;padding:9px 10px;min-height:36px;width:100%;border:1px solid var(--sn-line)!important;background:#ffffff05!important;border-radius:8px;color:var(--sn-text)!important;text-align:left;font-size:10px;font-weight:550;box-shadow:none}
+.sidebar-refined .profile-open-button svg{width:14px;height:14px;color:var(--sn-muted)}
+.app-shell .sidebar-refined .profile-open-button .sidebar-profile-arrow{margin-left:auto;font-size:14px;color:var(--sn-accent)}
+.app-shell .sidebar-refined .dashboard-sidebar__nav{gap:12px;padding:0}
+.app-shell .sidebar-refined .dashboard-sidebar__group{gap:5px}
+.sidebar-section-caption{display:flex;align-items:center;gap:9px;padding:13px 10px 7px;color:var(--sn-muted);font-size:8px;letter-spacing:.12em;font-weight:650;line-height:1.5}
+.sidebar-section-caption i{height:1px;flex:1;background:var(--sn-line)}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle){position:relative;display:flex;align-items:center;gap:10px;width:100%;min-height:48px;margin:0;padding:9px 10px;border:1px solid transparent!important;border-radius:10px!important;background:transparent!important;color:var(--sn-text)!important;box-shadow:none!important;font-size:11px;font-weight:500;line-height:1.5;text-align:left;letter-spacing:0;transform:none;transition:background .16s ease,border-color .16s ease}
+.sidebar-item-icon{display:grid;place-items:center;flex:0 0 28px;height:30px;border-radius:8px;background:#ffffff04;border:1px solid var(--sn-line);color:var(--sn-muted)}
+.sidebar-item-icon svg{width:17px;height:17px}
+.app-shell .sidebar-refined .dashboard-sidebar__item-label{flex:1;min-width:0;color:inherit;font:inherit}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle):hover{background:#8acda811!important;border-color:var(--sn-line)!important;transform:none}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active:not(.dashboard-sidebar__group-toggle){background:linear-gradient(110deg,#ffffff08,transparent),var(--sn-active)!important;border-color:#a7d8bb26!important;box-shadow:inset 2px 0 var(--sn-accent),0 4px 12px #0000000b!important;font-weight:650;color:var(--sn-text)!important}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active .sidebar-item-icon{background:#a4d8bb13;border-color:#a4d8bb29;color:var(--sn-accent)}
+.sidebar-active-dot{width:4px;height:4px;border-radius:50%;background:var(--sn-accent);flex:none;margin-right:2px}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button:focus-visible{outline:2px solid var(--sn-accent)!important;outline-offset:2px!important}
+.app-shell .sidebar-refined .dashboard-sidebar__group-toggle{display:flex;gap:8px;align-items:center;justify-content:flex-start;background:transparent!important;border:0!important;color:var(--sn-muted)!important;border-radius:8px;box-shadow:none!important;padding:13px 10px 7px;font-size:9px;letter-spacing:.1em}
+.sidebar-section-rule{width:14px;height:1px;background:var(--sn-muted);opacity:.5}
+.app-shell .sidebar-refined .dashboard-sidebar__subitem{padding-left:13px!important}
+.app-shell .sidebar-refined .dashboard-sidebar__item-badge{min-width:18px;height:18px;display:grid;place-items:center;padding:0 4px;background:#ddbd67!important;color:#19251e!important;font-size:9px;border-radius:6px;box-shadow:none}
+.app-shell .sidebar-refined .sidebar-sign-out{display:flex;justify-content:flex-start;gap:10px;margin:24px 0 0;padding:12px;border:1px solid var(--sn-line);background:transparent;color:var(--sn-muted);font-size:11px;border-radius:10px;min-height:44px}
+.sidebar-refined .sidebar-sign-out svg{width:17px;height:17px}
+.app-shell .sidebar-refined .sidebar-sign-out:hover{color:#dca19a;background:#b3544910;border-color:#b3544925}
+@media(max-width:980px){
+ .app-shell .dashboard-sidebar.sidebar-refined:not(.is-menu-open){padding:8px!important;background:var(--sn-bg)!important;border-radius:13px!important}
+ .sidebar-refined:not(.is-menu-open) .sidebar-eyebrow{display:none}
+ .app-shell .dashboard-sidebar.sidebar-refined.is-menu-open{padding:20px 15px!important}
+ .app-shell .sidebar-refined.is-menu-open .dashboard-user-card{margin-top:18px}
+ .app-shell .sidebar-refined .mobile-menu-toggle{border:1px solid var(--sn-line)!important;border-radius:9px;background:var(--sn-active)!important;color:var(--sn-text)!important;min-height:44px}
+ .app-shell .sidebar-refined.is-menu-open .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle){font-size:13px;min-height:49px}
+ .app-shell .sidebar-refined.is-menu-open .sidebar-section-caption{font-size:9px;padding-top:17px}
+ .sidebar-refined.is-menu-open .sidebar-eyebrow{padding-top:18px}
+}
+@media(prefers-reduced-motion:reduce){.app-shell .sidebar-refined *{transition:none!important}}
+/* Keep drawer sections compact even when the shell uses a grid layout. */
+.app-shell .dashboard-sidebar.sidebar-refined{gap:0!important;align-content:start}
+.app-shell .sidebar-refined .dashboard-user-card>div:not(.profile-avatar){text-align:left;min-width:0}
+.app-shell .sidebar-refined .profile-avatar>span{font-size:14px!important}
+@media(max-width:980px){
+ .app-shell .sidebar-refined.is-menu-open .dashboard-user-card{margin:0 0 10px!important}
+ .sidebar-refined.is-menu-open .sidebar-eyebrow{padding:17px 4px 14px}
+}
+/* Frosted navigation surfaces and pointer feedback. */
+.app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle){
+ border-radius:16px!important;border:1px solid #c3ebd412!important;
+ background:linear-gradient(125deg,#ffffff09,#ffffff02)!important;
+ box-shadow:inset 0 1px 0 #ffffff08,0 3px 10px #00000008!important;
+ backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+ transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.app-shell .sidebar-refined .profile-open-button,.app-shell .sidebar-refined .sidebar-sign-out{border-radius:13px!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active:not(.dashboard-sidebar__group-toggle){
+ background:linear-gradient(120deg,#b8f2cf22,#ffffff07),var(--sn-active)!important;
+ border-color:#b9efcf45!important;border-radius:16px!important;
+ box-shadow:inset 0 1px 0 #ffffff16,inset 2px 0 var(--sn-accent),0 5px 16px #00000012!important;
+}
+@media(hover:hover) and (pointer:fine){
+ .app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle):hover{
+  transform:translateX(3px);border-color:#b9efcf4a!important;
+  background:linear-gradient(120deg,#b8f2cf22,#ffffff09)!important;
+  box-shadow:inset 0 1px 0 #ffffff1a,0 6px 18px #00000018!important;
+ }
+ .app-shell .sidebar-refined .dashboard-sidebar__nav button:hover .sidebar-item-icon{color:var(--sn-accent);background:#b8f2cf18;border-color:#b9efcf35}
+ .app-shell .sidebar-refined .profile-open-button:hover{background:#b8f2cf15!important;border-color:#b9efcf40!important}
+}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle):active{transform:scale(.985);transition-duration:.08s}
+:root[data-theme="light"] .app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle){border-color:#42795620!important;background:linear-gradient(125deg,#ffffffb0,#ffffff45)!important}
+:root[data-theme="light"] .app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active:not(.dashboard-sidebar__group-toggle){background:linear-gradient(125deg,#e0efdfeb,#edf5eccc)!important;border-color:#42795650!important}
+@media(prefers-reduced-motion:reduce){.app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle){transition:none!important;transform:none!important}}
+/* Readable labels on both desktop and phone. */
+.app-shell .dashboard-sidebar.sidebar-refined{--sn-text:#f0f7f3;--sn-muted:#adc6b8}
+:root[data-theme="blue"] .app-shell .dashboard-sidebar.sidebar-refined{--sn-text:#f1f6ff;--sn-muted:#b8cce5}
+:root[data-theme="light"] .app-shell .dashboard-sidebar.sidebar-refined{--sn-text:#203c2c;--sn-muted:#536c5b}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle){font-size:14px!important;font-weight:600;line-height:1.5;min-height:52px}
+.app-shell .sidebar-refined .sidebar-section-caption{font-size:10px;letter-spacing:.08em}
+.app-shell .sidebar-refined .dashboard-sidebar__group-toggle{font-size:11px}
+.app-shell .sidebar-refined .sidebar-item-icon{color:var(--sn-muted)}
+.app-shell .sidebar-refined .sidebar-item-icon svg{width:19px;height:19px}
+.app-shell .sidebar-refined .dashboard-user-card strong{font-size:13px}
+.app-shell .sidebar-refined .dashboard-user-card>div>span{font-size:12px}
+.app-shell .sidebar-refined .dashboard-user-card .profile-open-button,.app-shell .sidebar-refined .sidebar-sign-out{font-size:13px}
+.app-shell .sidebar-refined .sidebar-eyebrow{font-size:11px}
+.app-shell .sidebar-refined .sidebar-eyebrow small{font-size:10px}
+/* Clear hierarchy with restrained emerald and warm notification accents. */
+.app-shell .sidebar-refined .dashboard-user-card{
+ position:relative;border-color:#b9efcf2e;
+ background:radial-gradient(ellipse at 0 0,#b0eac51a,transparent 75%),linear-gradient(135deg,#ffffff08,#ffffff02),var(--sn-panel);
+ box-shadow:inset 0 1px 0 #ffffff12,0 8px 20px #0000000d;
+}
+.app-shell .sidebar-refined .dashboard-user-card .profile-avatar{border-color:#b7e8c94a;box-shadow:inset 0 1px 0 #ffffff25,0 0 0 4px #b3e8c508}
+.app-shell .sidebar-refined .sidebar-section-caption{padding-top:23px;padding-bottom:10px;color:var(--sn-muted)}
+.app-shell .sidebar-refined .sidebar-section-caption i{background:linear-gradient(90deg,#a8d5bf30,transparent)}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active:not(.dashboard-sidebar__group-toggle){
+ background:linear-gradient(115deg,#b8f2cf2e,#ffffff08),var(--sn-active)!important;
+ border-color:#b9efcf66!important;
+ box-shadow:inset 0 1px 0 #ffffff26,inset 3px 0 var(--sn-accent),0 0 18px #80d7a314,0 5px 14px #00000012!important;
+}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active .sidebar-item-icon{background:#b8f2cf26;color:#deffeb;border-color:#b9efcf4d;box-shadow:inset 0 1px #ffffff15}
+.app-shell .sidebar-refined .sidebar-active-dot{width:6px;height:6px;box-shadow:0 0 0 4px #b9efcf0c,0 0 9px #b9efcf45}
+.app-shell .sidebar-refined .dashboard-sidebar__item-badge{
+ min-width:22px;height:22px;padding:0 6px;background:linear-gradient(140deg,#ffdf91,#e8b854)!important;
+ color:#35280d!important;font-size:11px;font-weight:800;border:1px solid #ffe6a766;border-radius:8px;
+ box-shadow:0 2px 9px #e8b85420,inset 0 1px #fff7d75c;
+}
+:root[data-theme="light"] .app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active .sidebar-item-icon{color:#285e3e;background:#42795618;border-color:#42795635}
+:root[data-theme="blue"] .app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active:not(.dashboard-sidebar__group-toggle){border-color:#9acaff66!important;box-shadow:inset 0 1px 0 #ffffff26,inset 3px 0 var(--sn-accent),0 0 18px #9acaff14!important}
+/* Icon feedback follows the entire navigation button's hover and focus. */
+.app-shell .sidebar-refined .sidebar-item-icon{transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease,color .2s ease}
+.app-shell .sidebar-refined .sidebar-item-icon svg{transition:transform .2s ease}
+@media(hover:hover) and (pointer:fine){
+ .app-shell .sidebar-refined .dashboard-sidebar__nav button:hover .sidebar-item-icon{transform:translateY(-1px) scale(1.08);box-shadow:0 0 12px #a8e8c325,inset 0 1px #ffffff20}
+ .app-shell .sidebar-refined .dashboard-sidebar__nav button:hover .sidebar-item-icon svg{transform:rotate(-5deg)}
+}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button:focus-visible .sidebar-item-icon{color:var(--sn-accent);background:#b8f2cf26;box-shadow:0 0 12px #a8e8c325}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button:active .sidebar-item-icon{transform:scale(.96)}
+@media(prefers-reduced-motion:reduce){.app-shell .sidebar-refined .sidebar-item-icon,.app-shell .sidebar-refined .sidebar-item-icon svg{transition:none!important;transform:none!important}}
+/* Short, purpose-specific icon gestures; no continuous animations. */
+@keyframes sn-draw{0%{stroke-dashoffset:65;opacity:.35}100%{stroke-dashoffset:0;opacity:1}}
+@keyframes sn-dot{0%,100%{transform:translateY(0);opacity:.65}50%{transform:translateY(-3px);opacity:1}}
+@keyframes sn-chart{0%{transform:scaleY(.3)}70%{transform:scaleY(1.12)}100%{transform:scaleY(1)}}
+@keyframes sn-letter{0%,100%{transform:rotate(0)}35%{transform:rotate(-12deg)}70%{transform:rotate(7deg)}}
+@keyframes sn-page{0%,100%{transform:translateY(0)}40%{transform:translateY(-3px)}70%{transform:translateY(1px)}}
+@keyframes sn-target{0%,100%{transform:scale(1)}50%{transform:scale(.8)}}
+@keyframes sn-game{0%,100%{transform:rotate(0)}30%{transform:rotate(-10deg)}65%{transform:rotate(10deg)}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .app-shell .sidebar-refined .dashboard-sidebar__nav button:hover .sidebar-item-icon svg{transform:none}
+ .sidebar-refined button:hover .sidebar-glyph path{stroke-dasharray:65;animation:sn-draw .55s ease both;animation-delay:var(--stroke-delay,0ms)}
+ .sidebar-refined button:hover .sidebar-glyph--contactAdmin path{stroke-dasharray:none;animation:none}
+ .sidebar-refined button:hover .sidebar-chat-dot{animation:sn-dot .5s ease both;animation-delay:var(--dot-delay);transform-box:fill-box;transform-origin:center}
+ .sidebar-refined button:hover .sidebar-glyph--combatTrainingAnalytics path:not(:first-child){stroke-dasharray:none;animation:sn-chart .5s ease both;transform-box:fill-box;transform-origin:bottom;animation-delay:var(--stroke-delay)}
+ .sidebar-refined button:hover :is(.sidebar-glyph--smr,.sidebar-glyph--documents,.sidebar-glyph--combatTrainingJournal,.sidebar-glyph--combatTrainingReport){animation:sn-page .55s ease}
+ .sidebar-refined button:hover .sidebar-glyph--memoLetter{animation:sn-letter .55s ease;transform-origin:center}
+ .sidebar-refined button:hover .sidebar-glyph--shootingStatements{animation:sn-target .5s ease;transform-origin:center}
+ .sidebar-refined button:hover .sidebar-glyph--games{animation:sn-game .55s ease;transform-origin:center}
+}
+@media(prefers-reduced-motion:reduce){.app-shell .sidebar-refined .sidebar-glyph,.app-shell .sidebar-refined .sidebar-glyph *{animation:none!important}}
+/* Move the existing shapes instead of tracing their outlines. */
+@keyframes sn-icon-lift{0%,100%{transform:translateY(0)}45%{transform:translateY(-2px)}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .app-shell .sidebar-refined button:hover .sidebar-glyph path{stroke-dasharray:none;stroke-dashoffset:0;animation:none}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph{animation:sn-icon-lift .45s ease}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--contactAdmin{animation:none}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--combatTrainingAnalytics{animation:none}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--combatTrainingAnalytics path:not(:first-child){animation:sn-chart .5s ease both;animation-delay:var(--stroke-delay);transform-box:fill-box;transform-origin:bottom}
+ .app-shell .sidebar-refined button:hover :is(.sidebar-glyph--smr,.sidebar-glyph--documents,.sidebar-glyph--combatTrainingJournal,.sidebar-glyph--combatTrainingReport){animation:sn-page .55s ease}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--memoLetter{animation:sn-letter .55s ease}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--shootingStatements{animation:sn-target .5s ease}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--games{animation:sn-game .55s ease}
+}
+
+/* Each menu symbol has its own motion, played once per hover. */
+@keyframes sn-home{0%,100%{transform:scale(1)}40%{transform:scale(1.15, .9)}70%{transform:scale(.96,1.06)}}
+@keyframes sn-book{0%,100%{transform:perspective(60px) rotateY(0)}45%{transform:perspective(60px) rotateY(-35deg)}}
+@keyframes sn-journal{0%,100%{transform:rotate(0)}40%{transform:rotate(-9deg) translateX(2px)}70%{transform:rotate(3deg)}}
+@keyframes sn-shield{0%,100%{transform:scale(1)}35%{transform:scale(1.17)}65%{transform:scale(.94)}}
+@keyframes sn-aim{0%,100%{transform:translate(0)}25%{transform:translate(-2px,1px)}55%{transform:translate(2px,-2px)}80%{transform:translate(0,-1px)}}
+@keyframes sn-people{0%,100%{transform:scaleX(1)}40%{transform:scaleX(1.2)}70%{transform:scaleX(.95)}}
+@keyframes sn-cap{0%,100%{transform:translateY(0) rotate(0)}45%{transform:translateY(-4px) rotate(-9deg)}}
+@keyframes sn-sheet{0%,100%{transform:skewY(0)}40%{transform:skewY(-8deg) translateY(-2px)}70%{transform:skewY(3deg)}}
+@keyframes sn-calendar{0%,100%{transform:rotateX(0)}45%{transform:perspective(60px) rotateX(35deg)}}
+@keyframes sn-news{0%,100%{transform:scaleX(1)}45%{transform:scaleX(.8)}70%{transform:scaleX(1.08)}}
+@keyframes sn-mail{0%,100%{transform:translateX(0) rotate(0)}30%{transform:translateX(-3px) rotate(-8deg)}65%{transform:translateX(3px) rotate(5deg)}}
+@keyframes sn-users{0%,100%{transform:translateX(0)}35%{transform:translateX(-2px)}70%{transform:translateX(2px)}}
+@keyframes sn-directory{0%,100%{transform:scale(1) rotate(0)}45%{transform:scale(1.1) rotate(6deg)}}
+@keyframes sn-check{0%,100%{transform:translateY(0)}35%{transform:translateY(3px)}65%{transform:translateY(-2px)}}
+@keyframes sn-permission{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}75%{transform:rotate(-4deg)}}
+@keyframes sn-stack{0%,100%{transform:translate(0)}35%{transform:translate(2px,-3px)}70%{transform:translate(-1px,1px)}}
+@keyframes sn-archive{0%,100%{transform:scaleY(1)}40%{transform:scaleY(.8) translateY(2px)}70%{transform:scaleY(1.1)}}
+@keyframes sn-cup{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-3px) rotate(-8deg)}65%{transform:translateY(-3px) rotate(8deg)}}
+@keyframes sn-medal{0%,100%{transform:perspective(60px) rotateY(0)}50%{transform:perspective(60px) rotateY(45deg)}}
+@keyframes sn-info{0%,100%{transform:scale(1)}30%{transform:scale(.85)}65%{transform:scale(1.15)}}
+@keyframes sn-controller{0%,100%{transform:rotate(0)}20%{transform:rotate(-12deg)}45%{transform:rotate(12deg)}70%{transform:rotate(-6deg)}}
+@keyframes sn-profile{0%,100%{transform:rotate(0)}45%{transform:rotate(-7deg) scale(1.08)}}
+@keyframes sn-exit{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+.app-shell .sidebar-refined button:hover .sidebar-glyph{animation:none;transform-origin:center;transform-box:fill-box}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--home{animation:sn-home .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--library{animation:sn-book .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--combatTrainingJournal{animation:sn-journal .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--combatTrainingResults{animation:sn-shield .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--shootingStatements{animation:sn-aim .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--meetings{animation:sn-people .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--youngSoldierTrainingCourse{animation:sn-cap .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--smr{animation:sn-sheet .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--combatTrainingPlan{animation:sn-calendar .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--combatTrainingReport{animation:sn-news .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--memoLetter{animation:sn-mail .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--users{animation:sn-users .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--regionalUsers{animation:sn-directory .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--requests{animation:sn-check .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--submissionEditRequests{animation:sn-permission .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--documents{animation:sn-stack .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--archive{animation:sn-archive .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--regionalUnitRating{animation:sn-cup .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--outpostRating{animation:sn-medal .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--aboutPlatform{animation:sn-info .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--games{animation:sn-controller .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--profile{animation:sn-profile .65s ease both}
+.app-shell .sidebar-refined button:hover .sidebar-glyph--logout{animation:sn-exit .65s ease both}
+}
+/* Animate only an overlay: labels stay steady and readable. */
+.app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active:not(.dashboard-sidebar__group-toggle)::before{
+ content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+ border:1px solid var(--sn-accent);background:linear-gradient(110deg,#b9efcf0c,transparent 70%);
+ box-shadow:0 0 14px #a8e8c326,inset 0 0 10px #a8e8c30c;opacity:.15;
+ animation:sn-selected-glow 4s ease-in-out infinite;
+}
+@keyframes sn-selected-glow{0%,100%{opacity:.12}50%{opacity:.65}}
+@media(prefers-reduced-motion:reduce){.app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active::before{animation:none!important;opacity:.25}}
+/* Distinct active border with a subtle irregular glass pattern. */
+.app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active:not(.dashboard-sidebar__group-toggle){
+ border:2px solid var(--sn-accent)!important;
+ box-shadow:inset 3px 0 var(--sn-accent),inset 0 1px #ffffff40,0 0 19px #9feacb40,0 5px 16px #00000020!important;
+}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active:not(.dashboard-sidebar__group-toggle)::before{
+ inset:0;border:0;
+ background:linear-gradient(123deg,transparent 14%,#dbffe920 14.5%,transparent 15.5%,transparent 71%,#dbffe916 72%,transparent 73%),linear-gradient(32deg,transparent 26%,#dbffe919 27%,transparent 28%,transparent 83%,#dbffe921 84%,transparent 85%),radial-gradient(ellipse at 78% 19%,#b9ffda26,transparent 48%);
+ box-shadow:inset 0 0 15px #c8ffe728,0 0 20px #9feacb55;
+ opacity:.45;animation:sn-selected-glow-bold 3.4s ease-in-out infinite;
+}
+.app-shell .sidebar-refined .sidebar-active-dot{width:7px;height:7px;background:#d0ffe4;box-shadow:0 0 0 4px #b9efcf18,0 0 12px #b9efcf99}
+@keyframes sn-selected-glow-bold{0%,100%{opacity:.25}50%{opacity:.95}}
+:root[data-theme="light"] .app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active:not(.dashboard-sidebar__group-toggle){box-shadow:inset 3px 0 var(--sn-accent),0 0 14px #42795630!important}
+/* Visible irregular etched lines on inactive glass buttons. */
+.app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle):not(.is-active)::before{
+ content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+ background:linear-gradient(123deg,transparent 16%,#d4ffe62b 16.4%,transparent 17.1%,transparent 74%,#d4ffe624 74.5%,transparent 75.2%),linear-gradient(34deg,transparent 30%,#d4ffe624 30.5%,transparent 31.2%,transparent 86%,#d4ffe62b 86.5%,transparent 87.2%),radial-gradient(ellipse at 82% 12%,#b9ffda14,transparent 54%);
+ opacity:.72;transition:opacity .2s ease;
+}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button:nth-of-type(even):not(.dashboard-sidebar__group-toggle):not(.is-active)::before{background-position:17px 0,-23px 0,0 0}
+@media(hover:hover) and (pointer:fine){.app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle):not(.is-active):hover::before{opacity:1}}
+:root[data-theme="light"] .app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle):not(.is-active)::before{background:linear-gradient(123deg,transparent 16%,#42795628 16.4%,transparent 17.1%,transparent 74%,#42795622 74.5%,transparent 75.2%),linear-gradient(34deg,transparent 30%,#42795622 30.5%,transparent 31.2%,transparent 86%,#42795628 86.5%,transparent 87.2%)}
+/* Shallow side notches retain the frosted surface and rounded silhouette. */
+@supports (mask-image:radial-gradient(circle,#000,transparent)){
+ .app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle){
+  -webkit-mask-image:radial-gradient(circle 4px at 0 50%,transparent 97%,#000 100%),radial-gradient(circle 4px at 100% 50%,transparent 97%,#000 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:radial-gradient(circle 4px at 0 50%,transparent 97%,#000 100%),radial-gradient(circle 4px at 100% 50%,transparent 97%,#000 100%);
+  mask-composite:intersect;
+ }
+ .app-shell .sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle)::after{
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:radial-gradient(circle 5.5px at 0 50%,transparent 70%,#c6f9dc88 74%,#c6f9dc88 88%,transparent 96%),radial-gradient(circle 5.5px at 100% 50%,transparent 70%,#c6f9dc88 74%,#c6f9dc88 88%,transparent 96%);
+ }
+}
+/* Administration heading is a clear section marker. */
+.app-shell .sidebar-refined .dashboard-sidebar__group-toggle{
+ min-height:42px;margin:18px 0 10px;padding:11px 12px!important;
+ border:1px solid var(--sn-line)!important;border-left:3px solid var(--sn-accent)!important;
+ border-radius:10px!important;background:linear-gradient(110deg,#b9efcf18,#ffffff04)!important;
+ color:var(--sn-text)!important;font-size:12px!important;font-weight:750;letter-spacing:.1em;
+ box-shadow:inset 0 1px #ffffff10!important;
+}
+.app-shell .sidebar-refined .dashboard-sidebar__group-toggle .sidebar-section-rule{background:var(--sn-accent);opacity:1;width:16px}
+.app-shell .sidebar-refined .dashboard-sidebar__group-toggle::after{color:var(--sn-accent);font-size:17px;opacity:1}
+/* Stronger navigation glyphs while preserving each individual gesture. */
+.app-shell .sidebar-refined .sidebar-item-icon{flex-basis:32px;height:34px;border-radius:10px;background:#b9efcf09;border-color:#b9efcf24}
+.app-shell .sidebar-refined .sidebar-item-icon svg{width:22px;height:22px;stroke-width:2.1}
+.app-shell .sidebar-refined .dashboard-sidebar__nav button.is-active .sidebar-item-icon{background:#b9efcf29;border-color:#b9efcf60;box-shadow:inset 0 1px #ffffff25,0 0 12px #b9efcf19}
+@media(hover:hover) and (pointer:fine){.app-shell .sidebar-refined .dashboard-sidebar__nav button:hover .sidebar-item-icon{transform:translateY(-2px) scale(1.14);color:var(--sn-accent);border-color:#b9efcf70;box-shadow:0 0 15px #b9efcf30,inset 0 1px #ffffff30}.app-shell .sidebar-refined .dashboard-sidebar__nav button:hover .sidebar-glyph{animation-duration:.8s}}
+.app-shell .sidebar-refined button.is-touch-feedback .sidebar-item-icon{transform:scale(1.12)!important;box-shadow:0 0 14px #b9efcf30}
+@media(prefers-reduced-motion:reduce){.app-shell .sidebar-refined button.is-touch-feedback .sidebar-item-icon{transform:none!important}}
+/* Equal depth feedback for every navigation item, including inactive ones. */
+.app-shell .dashboard-sidebar.sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle){box-shadow:inset 0 1px #ffffff30,0 4px 0 var(--depth-edge,#0c2118),0 8px 15px #00000025!important;border-bottom-color:#b9efcf45!important;margin-bottom:5px;overflow:visible}
+@media(hover:hover) and (pointer:fine){
+ .app-shell .dashboard-sidebar.sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle):hover,.app-shell .dashboard-sidebar.sidebar-refined .dashboard-sidebar__nav button.is-depth-hover:not(.dashboard-sidebar__group-toggle){transform:perspective(650px) rotateX(var(--depth-x,4deg)) rotateY(var(--depth-y,-4deg)) translateY(-4px) scale(1.025)!important;background:linear-gradient(125deg,#b9efcf2c,#ffffff09),var(--sn-panel)!important;border-color:#b9efcf88!important;box-shadow:inset 0 1px #ffffff60,0 7px 0 var(--depth-edge,#0c2118),0 14px 20px #00000038!important;z-index:1}
+}
+@media(prefers-reduced-motion:reduce){.app-shell .dashboard-sidebar.sidebar-refined .dashboard-sidebar__nav button:not(.dashboard-sidebar__group-toggle):hover{transform:none!important}}
+.journal-turning-page{transform-box:fill-box;transform-origin:left center}
+@keyframes journal-leaf-turn{0%{transform:perspective(60px) rotateY(0deg);opacity:1}48%{transform:perspective(60px) rotateY(-150deg);opacity:.7}49%{opacity:0}60%{transform:perspective(60px) rotateY(0);opacity:0}100%{transform:perspective(60px) rotateY(0);opacity:1}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--combatTrainingJournal{animation:none!important}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--combatTrainingJournal path{animation:none!important;stroke-dasharray:none}
+ .app-shell .sidebar-refined button:hover .journal-turning-page{animation:journal-leaf-turn .9s ease-in-out 2}
+}
+@media(prefers-reduced-motion:reduce){.journal-turning-page{animation:none!important}}
+@keyframes results-check-reveal{0%{stroke-dashoffset:16;opacity:.25}65%{stroke-dashoffset:0;opacity:1;stroke-width:2.1}85%{stroke-width:2.8}100%{stroke-dashoffset:0;opacity:1;stroke-width:2.1}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--combatTrainingResults{animation:none!important;transform:none!important}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--combatTrainingResults>path{animation:none!important;stroke-dasharray:none}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--combatTrainingResults>.results-check-mark{stroke-dasharray:16;animation:results-check-reveal .9s ease both!important;color:var(--sn-accent)}
+}
+@media(prefers-reduced-motion:reduce){.results-check-mark{animation:none!important}}
+.book-opening-cover,.book-single-leaf{transform-box:view-box;transform-origin:12px 12px}
+@keyframes book-cover-open{0%,100%{transform:perspective(70px) rotateY(0deg)}25%,75%{transform:perspective(70px) rotateY(-145deg)}}
+@keyframes book-leaf-flip{0%,25%{transform:perspective(70px) rotateY(0deg);opacity:1}65%{transform:perspective(70px) rotateY(-150deg);opacity:.7}66%,80%{opacity:0}81%,100%{transform:perspective(70px) rotateY(0deg);opacity:1}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--library{animation:none!important;transform:none!important}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--library path{animation:none!important;stroke-dasharray:none}
+ .app-shell .sidebar-refined button:hover .book-opening-cover{animation:book-cover-open 1.4s ease-in-out both}
+ .app-shell .sidebar-refined button:hover .book-single-leaf{animation:book-leaf-flip 1.4s ease-in-out both}
+}
+@media(prefers-reduced-motion:reduce){.book-opening-cover,.book-single-leaf{animation:none!important}}
+.home-door-light{opacity:0}
+.home-opening-door{transform-box:view-box;transform-origin:10px 17px}
+@keyframes home-door-open{0%,100%{transform:perspective(50px) rotateY(0)}35%,75%{transform:perspective(50px) rotateY(-65deg)}}
+@keyframes home-light-on{0%,100%{opacity:0}35%,75%{opacity:.65}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--home{animation:none!important;transform:none!important}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--home path{animation:none!important;stroke-dasharray:none}
+ .app-shell .sidebar-refined button:hover .home-opening-door{animation:home-door-open 1.3s ease both}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--home .home-door-light{animation:home-light-on 1.3s ease both!important}
+}
+@media(prefers-reduced-motion:reduce){.home-opening-door,.home-door-light{animation:none!important}}
+.target-impact-ring{opacity:0;transform-box:view-box;transform-origin:12px 12px}
+@keyframes target-arrow-arrive{0%{transform:translate(7px,-7px);opacity:0}15%{opacity:1}55%,100%{transform:translate(0,0);opacity:1}}
+@keyframes target-impact-wave{0%,45%{transform:scale(.5);opacity:0}55%{transform:scale(1);opacity:.8}100%{transform:scale(3);opacity:0}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--shootingStatements{animation:none!important;transform:none!important}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--shootingStatements path{animation:none!important;stroke-dasharray:none}
+ .app-shell .sidebar-refined button:hover .target-flying-arrow{animation:target-arrow-arrive .9s ease-out both}
+ .app-shell .sidebar-refined button:hover .target-impact-ring{animation:target-impact-wave .9s ease-out both}
+}
+@media(prefers-reduced-motion:reduce){.target-flying-arrow,.target-impact-ring{animation:none!important}}
+@keyframes meeting-fall-in{0%{opacity:0;transform:translateY(-4px)}70%{opacity:1;transform:translateY(0)}100%{opacity:1;transform:translateY(0)}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--meetings{animation:none!important;transform:none!important}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--meetings path{animation:none!important;stroke-dasharray:none}
+ .app-shell .sidebar-refined button:hover .meeting-person--first{animation:meeting-fall-in .5s ease-out both}
+ .app-shell .sidebar-refined button:hover .meeting-person--second{animation:meeting-fall-in .5s ease-out .18s both}
+}
+@media(prefers-reduced-motion:reduce){.meeting-person{animation:none!important}}
+.course-opening-book{opacity:0;transform-box:view-box;transform-origin:12px 22px}
+@keyframes course-book-open{0%{opacity:0;transform:scaleX(.1) translateY(-2px)}35%,80%{opacity:1;transform:scaleX(1) translateY(0)}100%{opacity:0;transform:scaleX(.1) translateY(-2px)}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--youngSoldierTrainingCourse{animation:none!important;transform:none!important}
+ .app-shell .sidebar-refined button:hover .sidebar-glyph--youngSoldierTrainingCourse path{animation:none!important;stroke-dasharray:none}
+ .app-shell .sidebar-refined button:hover .course-opening-book{animation:course-book-open 1.4s ease both}
+}
+@media(prefers-reduced-motion:reduce){.course-opening-book{animation:none!important}}

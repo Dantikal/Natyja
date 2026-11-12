@@ -1,0 +1,28 @@
+[Unit]
+Description=Munara Django application
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/munara/current/backend
+EnvironmentFile=/etc/munara/munara.env
+RuntimeDirectory=munara
+RuntimeDirectoryMode=0755
+ExecStart=/opt/munara/venv/bin/gunicorn \
+    --workers 3 \
+    --timeout 300 \
+    --bind unix:/run/munara/gunicorn.sock \
+    --access-logfile - \
+    --error-logfile - \
+    munara.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+KillSignal=SIGQUIT
+TimeoutStopSec=30
+PrivateTmp=true
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
